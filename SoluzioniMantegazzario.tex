@@ -11,6 +11,7 @@
 \usepackage{xparse}
 \usepackage{color}
 \usepackage{forloop}
+\usepackage{braket}
 
 % Definiamo i vari ambienti
 \NewDocumentCommand{\ZZ}{G{}}{
@@ -184,18 +185,29 @@ $$
 $$
 usando induttivamente l' additività ottengo che:
 $$
-\left\langle\frac{a}{b}\, x|\frac{c}{d}\,  y\right\rangle=\frac{1}{b^2d^2}\left\langle ad\, x|cb\, y\right\rangle=\frac{ac}{bd}\left\langle x|y\right\rangle\qquad a,b,c,d \in \NN
+\Braket{\frac{a}{b}\, x|\frac{c}{d}\, y}=\frac{1}{b^2d^2}\left\langle ad\, x|cb\, y\right\rangle=\frac{ac}{bd}\left\langle x|y\right\rangle\qquad a,b,c,d \in \NN
 $$
 questo prova l' omogeneità sui razionali, per continuità ciò è vero su $\RR$. 
-\ex{6.39} Siano $\Norm{\cdot}_1$ e $\Norm{\cdot}_2$ due norme. Prendo $B_1\subseteq V$ la sfera unitaria rispetto alla prima (che in dimensione finita è sempre compatta) e considero $\Norm{\cdot}_2\, : B_1\rightarrow \RR$. Questa funzione è continua rispetto alla metrica indotta da $\Norm{\cdot}_1$ infatti si conta:
+\ex{6.39} Essendo $V$ a dimensione finita esiste, fissata una base, un isomorfismo $\psi$ con un certo $\RR^d$:
 $$
-\Norm{u-v}_2\leq\sum_{i=1}^{d}\norm{u_i-v_i}\Norm{\vec{e_i}}_2\leq d\cdot\max_i\{\norm{u_i-v_i}\}\cdot \max_i\{\Norm{\vec{e_i}}_2\} 
+\psi: \ V\ni\lambda_1\vec{e_1}+\ldots+\lambda_d\vec{e_d}\ \mapsto\  (\lambda_1,\ldots,\lambda_d)\in\RR^d
 $$
-Quindi ammette $\max=M$ e $\min=m$. Per un generico $u\in B_1$: 
-$$m\Norm{u}_1\leq \Norm{u}_2\leq M\Norm{u}_1$$
-Inoltre se si prende $V$ come l' insieme delle successioni assolutamente convergenti le seguenti norme non sono equivalenti:
+Pongo ora su $V$ la norma  {\it euclidea}:
 $$
-\Norm{x_n}_1=\sup_k \norm{x_k} \mbox{      e       } \Norm{x_n}_2=\sum_{k\in\NN} 2^{-k}\norm{x_k}
+\Norm{v}_{\mathcal{E}}:=\max_i\{\norm{\lambda_i}\}
+$$
+mostriamo che $B_{\mathcal{E}}$, la palla unitaria, è compatta per successioni. Data una successione di vettori unitari in $V$ le loro componenti sono $d$ successioni di reali in $[-1,1]$ dunque per Bolzano-Weierstrass hanno una sottosuccessione convergente. Considero ora un' altra generica norma su $V$ e la penso come funzione dalla palla unitaria in $\RR$:
+$$\Norm{\cdot}\, : B_{\mathcal{E}}\rightarrow \RR$$
+Questa funzione è continua rispetto alla metrica indotta da $\Norm{\cdot}_{\mathcal{E}}$ infatti si conta:
+$$
+\Norm{u-v}\leq\sum_{i=1}^{d}\norm{u_i-v_i}\Norm{\vec{e_i}}\leq d\cdot\max_i\{\norm{u_i-v_i}\}\cdot \max_i\{\Norm{\vec{e_i}}\}=K \Norm{u-v}_{\mathcal{E}}
+$$
+Quindi per Weierstrass ammette $\max=M$ e $\min=m$. Dunque si ha, per un generico $u\in B_{\mathcal{E}}$: 
+$$m\Norm{u}_{\mathcal{E}}\leq \Norm{u}_2\leq M\Norm{u}_{\mathcal{E}}$$
+Abbiamo mostrato che ogni norma è equivalente a $\Norm{\cdot}_{\mathcal{E}}$; e poichè relazione di bi-lipschitz equivalenza gode della proprietà transitiva abbiamo finito.\\ 
+Per la seconda domanda si prenda $V$ come l' insieme delle successioni a valori reali assolutamente sommabili, le seguenti norme non sono equivalenti:
+$$
+\Norm{x_n}_1=\sup_k \norm{x_k} \quad \mbox{      e       }\quad \Norm{x_n}_2=\sum_{k\in\NN} 2^{-k}\norm{x_k}
 $$
 in effetti non inducono neppure la stessa topologia poichè esistono successioni di vettori di $V$ che rispetto alla prima non convergono mentre rispetto alla seconda si. (ad esempio $(x_n)_k=\delta_{n,k}$).
 \ex{6.40} {\it Controesempio:} nello spazio $V$ delle successioni la cui somma dei valori assoluti converge considero il sottospazio $W$ delle successioni definitivamente nulle. Se prendo le successioni del tipo $x_n=2^{-n}\chi_{[0,k]}$ queste vivono in $W$ ma il loro limite (rispetto a $k$ si intende, cioè la successione $y_n=2^{-n}$) chiaramente no. 
