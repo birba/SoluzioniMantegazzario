@@ -223,18 +223,20 @@ $$
 \sum_{j=1}^{\infty}\Norm{y_j}\leq \sum_{j\in\NN}2^{-j}=1\quad \Rightarrow\quad x_{n(k)}-x_{n(0)}=\sum_{i=1}^{k}y_j\rightarrow \ell\ \  \Rightarrow\ \  x_{n(k)}\mbox{ converge}
 $$ 
 ma questo è assurdo.
+\ex{6.50} Sia dato un ricoprimento aperto $\{A_{\lambda}\}_{\lambda\in\Lambda}$. Supponiamo che l' $\inf$ dei raggi sia $0$. Questo significa che per ogni $\epsilon>0$ esiste una palla $B_{\epsilon}(x_{\epsilon})$ che non è contenuta interamente in nessun aperto del ricoprimento. Per ogni $n$, mi gioco questa proprietà con $\epsilon=1/n$ e definisco come $x_n$ il centro della palla $B_{\epsilon}(x_\epsilon)$. Questa successione ammette una sottosuccessione convergente $(x_{n_k})$ ad un certo elemento $x_{\infty}\in X$, ma questo punto limite deve stare in un certo $A_{\lambda}$ (perchè sono un ricoprimento); dunque esiste $r>0$ tale che $B_r(x_{\infty})\subseteq A_{\lambda}$. In particolare ci saranno infiniti punti della mia sottosuccessione nell' intorno $B_{r/2}(x_{\infty})$. Ma allora scelgo un elemento della sottosuccessione abbastanza avanti in modo che $n_k>2/r$, ottengo quindi che $$B_{1/{n_k}}(x_{n_k})\subseteq B_r(x_{\infty})\subseteq A_{\lambda}$$
+ma questo è assurdo perchè viola la proprietà caratteristica di $x_{n_k}$ (ha la palla di raggio dato interamente contenuta in un aperto del ricoprimento).
 \ex{6.51} (\NINI in spazi metrici) Scelgo una successione tale che $x_n \in F_n$. Tale successione vive in $F_1$ che è compatto dunque qui ammette una sottosuccessione convergente a $x_{\infty}$. Per ogni naturale $N$ osservo che la sottosuccessione vive definitivamente in $F_N$ e per compattezza qui vive il suo limite $x_{\infty}$, ciò prova che $x_{\infty}\in \bigcap_{n\in \NN}F_n$.
-\ex{6.54} {\it Compattezza per ricoprimenti} $\Rightarrow$ {\it Compattezza per successioni}. \\
-Supponiamo per assurdo che esista una successione $(x_n)$ che non ammette sottosuccessioni convergenti. Questo implica che:
-$$ \forall x\in X\  \exists \epsilon_x > 0: \; \left( B_{\epsilon_x}(x)\setminus \{x\}\right) \cap (x_n) = \emptyset $$
-Chiaramente $\bigcup_{x\in X}B_{\epsilon_x}(x)\supseteq X$ dunque $\{B_{\epsilon_x}(x)\}_{x\in X}$ è un ricoprimento aperto. Ne estraggo uno finito con centri $y_1,\ldots,y_k$. Chiaramente per almeno un $1\leq i\leq k$ ho che $B_{\epsilon_{y_i}}(y_i)$ contiene infiniti termini della successione, ma per costruzione ne può contenere al più uno. Assurdo.\\
+\ex{6.54} {\it Compattezza per ricoprimenti} $\Rightarrow$ {\it Compattezza sequenziale}. \\
+Supponiamo per assurdo che esista una successione $(x_n)_{n\in\NN}$ che non ammette sottosuccessioni convergenti. Questo significa che l' immagine di $(x_n)_{n\in\NN}$ non ha punti di accumulazione, cioè che:
+$$ \forall x\in X\  \exists \epsilon_x > 0: \; \left( B_{\epsilon_x}(x)\setminus \{x\}\right) \cap (x_n)_{n\in\NN} = \emptyset $$
+Chiaramente $\bigcup_{x\in X}B_{\epsilon_x}(x)\supseteq X$ dunque $\{B_{\epsilon_x}(x)\}_{x\in X}$ è un ricoprimento aperto; ma per ipotesi deve ammettere un sottoricoprimento finito che avrà centri $y_1,\ldots,y_k$. Per pigeonhole per almeno un $1\leq i\leq k$ ho che $B_{\epsilon_{y_i}}(y_i)$ contiene infiniti termini della successione, ma per costruzione ne può contenere al più uno. Assurdo.\\
 {\it Compattezza sequenziale} $\Rightarrow$ {\it Totale limitatezza}.\\
-Fissato un $\epsilon > 0$ e scelto un $x_0 \in X$ definisco ricorsivamente una sequenza 
-$$x_{n+1} \in X \setminus \bigcup_{i=0}^{n}B_\epsilon(x_i)$$
+Fissato un $\epsilon > 0$ e scelto un $x_0 \in X$ definisco ricorsivamente una sequenza $(x_n)$ scegliendo ogni termine in modo che:
+$$x_{n} \in X \setminus \bigcup_{i=0}^{n-1}B_\epsilon(x_i)$$
 Opero una dicotomia ({\it cit}):
 \begin{itemize}
 \item Se esiste $N$ tale che $X \setminus \bigcup_{i=0}^{N}B_\epsilon(x_i) = \emptyset $ ho trovato un ricoprimento finito;
-\item Se un tale $N$ non esiste allora ho ottenuto una successione $(x_n)$. Considero una sua sottosuccessione convergente: ma questo è assurdo perché comunque presi $m>n$ ho che:
+\item Se un tale $N$ non esiste allora ho ottenuto una successione $(x_n)$. Per compattezza deve avere una sottosuccessione convergente (dunque di Cauchy): ma questo è assurdo perché comunque presi $m>n$ ho che:
 $$
 x_m\notin B_{\epsilon}(x_n)\ \Rightarrow\ d(x_m,x_n)>\epsilon
 $$
@@ -242,14 +244,15 @@ $$
 {\it Compattezza sequenziale} $\Rightarrow$ {\it Completezza}.\\
 Sia $(x_n)$ una successione di Cauchy; per compattezza ammette una sottosuccessione convergente ma, essendo di Cauchy $(x_n)$ converge per $\rec{6.13}$.\\
 {\it Completezza} $\wedge$ {\it Totale limitatezza} $\Rightarrow$ {\it Compattezza sequenziale}.\\
-Prendo una qualsiasi successione $(x_n)\subseteq X$; voglio definire ricorsivamente una sottosuccessione convergente, per completezza mi basta che sia di Cauchy. Pongo $\epsilon_k=2^{-k}$. Per ogni $k$ esiste un numero finito di palle di raggio $\epsilon_k$ che ricoprono $B_{k-1}$ (dove ovviamente $B_0=X$) perchè un sottoinsieme di un totalmente limitato è totalmente limitato. Dunque la mia successione cade infinite volte in almeno una di queste che chiamo $B_k$, posso definire allora:
+Prendo una qualsiasi successione $(x_n)\subseteq X$; voglio definire ricorsivamente una sua sottosuccessione convergente; per completezza mi basta farla di Cauchy. Per totale limitatezza posso ricoprire tutto $X$ con numero finito di palle di raggio arbitrariamente fissato (diciamo $r_0=1$). La mia successione dovrà cadere infinite volte in almeno una di queste palle (per pigeonhole); ne prendo una e la chiamo $B_0$ e, poichè un sottoinsieme di un totalmente limitato è totalmente limitato, anche $B_0$ è totalmente limitato. Ma $B_0$ contiene infiniti termini della successione quindi, dato un qualunque suo ricoprimento finito posso trovare una $B_1\subset B_0$ di raggio arbitrario ($r_1=1/2$) che contiene ancora infiniti elementi della successione. Definisco così induttivemente i $B_k$ e li scelgo ogni volta di raggio $2^{-k}$. Definisco ora la mia sottosuccessione $(x_{n(k)})_{k\in\NN}$ così:
 $$
-n(k):=\min\left\{n\in\NN\mid n>k\, \wedge\, x_n\in B_k\right\}
+n(k):=\min\left\{j\in\NN\mid j>n(k-1)\, \wedge\, x_j\in B_k\right\}
 $$ 
 perchè l' insieme di cui prendo il minimo non è mai vuoto. Ma la sottosuccessione così definita è chiaramente di Cauchy.\\
-{\it Completezza} $\wedge$ {\it Totale limitatezza} $\Rightarrow$ {\it Separabilità}.\\
-
-
+{\it Totale limitatezza $\wedge$ Compattezza sequenziale $\Rightarrow$ Compattezza per ricoprimenti}\\
+Sia dato un ricoprimento aperto $\{A_{\lambda}\}_{\lambda\in\Lambda}$. Per compattezza sequenziale esiste un {\it numero di Lebesgue $\rho$} positivo (\rec{6.50}). Per totale limitatezza esiste un ricoprimento finito con palle di raggio $\rho$; sia $\{B(x_1),\ldots,B(x_n)\}$ tale ricoprimento finito. Per definizione di numero di Lebesgue ho che ognuna di queste palle $B(x_i)$ è contenuta in almeno un aperto $A_{\lambda_i}$ del mio ricoprimento; si ha dunque che $\{A_{\lambda_1},\ldots,A_{\lambda_n}\}$ è ancora un ricoprimento del mio insieme ed è chiaramente finito.\\
+{\it Totale limitatezza} $\Rightarrow$ {\it Separabilità}.\\
+Voglio costruire un sottoinsieme denso e numerabile. Per ogni $\epsilon_k=2^{-k}$ ho un ricoprimento finito di $\epsilon_k-$palle. Sia $C_k=\{c_1,\ldots,c_{n(k)}\}$ l' insieme dei centri di queste palle. L' insieme $C=\bigcup_{k\in\NN}C_k$ è numerabile (in quanto unione numerabile di insiemi finiti) e denso, infatti dato un qualsiasi $x\in X$ ed $\epsilon>0$ so che $x$ è contenuto in una palla del mio $\epsilon-$ricoprimento finito, cioè dista meno di $\epsilon$ dal un centro di queste palle, che è un elemento di $C$. Per l'arbitrarietà di $\epsilon$ ogni palla centrata in $x$ interseca $C$.
 
 \section{Continuità}
 \ex{7.40}Controsempio cannonoso: Fissiamo una base di Hamel di $\RR$ come spazio vettoriale su $\QQ$. Ora ogni reale $x$ si scrive come combinazione lineare {\it finita}: $x=\sum_{i=0}^{n_x} \frac{p_i}{q_i}\, b_i$. Definisco:
