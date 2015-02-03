@@ -1,7 +1,8 @@
 \documentclass[a4paper,11pt]{article}
 
 \title{Soluzioni Mantegazzario}
-\author{Federico Franceschini, Dario Ascari, Dario Balboni, Umberto Pappalettera, Andrea Marino}
+\author{Federico Franceschini, Dario Ascari, Dario Balboni, Umberto Pappalettera}
+\author{Andrea Marino, Gianluca Tasinato}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -212,16 +213,16 @@ $$
 $$
 in effetti non inducono neppure la stessa topologia poichè esistono successioni di vettori di $V$ che rispetto alla prima non convergono mentre rispetto alla seconda si. (ad esempio $(x_n)_k=\delta_{n,k}$).
 \ex{6.40} {\it Controesempio:} nello spazio $V$ delle successioni la cui somma dei valori assoluti converge considero il sottospazio $W$ delle successioni definitivamente nulle. Se prendo le successioni del tipo $x_n=2^{-n}\chi_{[0,k]}$ queste vivono in $W$ ma il loro limite (rispetto a $k$ si intende, cioè la successione $y_n=2^{-n}$) chiaramente no. 
-\ex{6.41} {\it completezza $\Rightarrow$ convergenza assoluta.} Poichè la serie converge il termine generale è infinitesimo, per completezza di $\RR$ questo vuol dire che, posto $S_k=\sum_{i=0}^k x_i$, si ha:
+\ex{6.41} {\it Completezza $\Rightarrow$ Convergenza assoluta.} Poichè la serie converge il termine generale è infinitesimo, per completezza di $\RR$ questo vuol dire che, posto $S_k=\sum_{i=0}^k x_i$, si ha:
 $$
 \epsilon>\sum_{i=M}^{N}\Norm{x_i}\geq \Norm{\sum_{i=M}^{N}x_i}=\Norm{S_N-S_M}\qquad\quad N,M \geq n_{\epsilon}
 $$
 Dunque la successione $S_N\in V$ e di Cauchy e per completezza converge.
-{\it convergenza assoluta $\Rightarrow$ completezza.} Supponiamo $V$ incompleto. Esiste dunque $(x_n)$ che ha la proprietà di Cauchy ma non converge in $V$. Usando nella definizione di Cauchy $\epsilon=2^{-j}$ estraggo una sottosuccessione $(x_{n(j)})$ tale che la successione di partenza stia definitivamente in $B_{2^{-j}}(x_{n(j)})$ e scelgo sempre $x_{n(j+1)}\in B_{2^{-j}}(x_{n(j)})$. Osservo che anche $(x_{n(j)})$ ha la proprietà di Cauchy e per $\rec{6.13}$ neanche lei converge. Posto $y_j:=x_{n(j+1)}-x_{n(j)}$ ho che:
+{\it Convergenza assoluta $\Rightarrow$ Completezza.} Supponiamo $V$ incompleto. Esiste dunque $(x_n)$ che ha la proprietà di Cauchy ma non converge in $V$. Usando nella definizione di Cauchy $\epsilon=2^{-j}$ estraggo una sottosuccessione $(x_{n(j)})$ tale che la successione di partenza stia definitivamente in $B_{2^{-j}}(x_{n(j)})$ e scelgo sempre $x_{n(j+1)}\in B_{2^{-j}}(x_{n(j)})$. Osservo che anche $(x_{n(j)})$ ha la proprietà di Cauchy e per $\rec{6.13}$ neanche lei converge. Posto $y_j:=x_{n(j+1)}-x_{n(j)}$ ho che:
 $$
-\sum_{j=1}^{\infty}\Norm{y_j}\leq \sum_{j\in\NN}2^{-j}=1\quad \Rightarrow\quad x_{n(k)}-x_{n(0)}=\sum_{i=1}^{k}y_j\rightarrow \ell\quad \Rightarrow\quad x_{n(k)}\mbox{ converge, assurdo.}
+\sum_{j=1}^{\infty}\Norm{y_j}\leq \sum_{j\in\NN}2^{-j}=1\quad \Rightarrow\quad x_{n(k)}-x_{n(0)}=\sum_{i=1}^{k}y_j\rightarrow \ell\ \  \Rightarrow\ \  x_{n(k)}\mbox{ converge}
 $$ 
-
+ma questo è assurdo.
 \ex{6.51} (\NINI in spazi metrici) Scelgo una successione tale che $x_n \in F_n$. Tale successione vive in $F_1$ che è compatto dunque qui ammette una sottosuccessione convergente a $x_{\infty}$. Per ogni naturale $N$ osservo che la sottosuccessione vive definitivamente in $F_N$ e per compattezza qui vive il suo limite $x_{\infty}$, ciò prova che $x_{\infty}\in \bigcap_{n\in \NN}F_n$.
 \ex{6.54} {\it Compattezza per ricoprimenti} $\Rightarrow$ {\it Compattezza per successioni}. \\
 Supponiamo per assurdo che esista una successione $(x_n)$ che non ammette sottosuccessioni convergenti. Questo implica che:
