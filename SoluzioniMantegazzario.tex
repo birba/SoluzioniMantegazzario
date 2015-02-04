@@ -2,7 +2,7 @@
 
 \title{Soluzioni Mantegazzario}
 \author{Federico Franceschini, Dario Ascari, Dario Balboni, Umberto Pappalettera \\ 
-Andrea Marino, Gianluca Tasinato}
+Andrea Marino, Gianluca Tasinato, Marco Costa}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -100,6 +100,31 @@ Nel seguito useremo le seguenti convenzioni: \\
 
 \section{Numeri Reali e Disuguaglianze}
 \ex{2.5} Pigeonhole sull'insieme delle parti frazionarie di $a, 2a, \ldots$
+\ex{2.13}
+AM-GM.
+Induzione. Il passo base per $n=2$ si verifica facilmente. Assumiamo ora che la disuguaglianza sia vera per $n$ termini e mostriamola per $n+1$.
+$$(\prod _{i=0} ^{n+1} a_i)^{1/n+1}=(\prod _{i=0} ^{n} a_i)^{1/n+1}\cdot a_{n+1}^{1/n+1}=(\prod _{i=0} ^{n} a_i^{1/n})^{n/n+1}\cdot a_{n+1}^{1/n+1}$$.
+Si noti ora che gli esponenti dei due fattori sommano ad 1. Applichiamo dunque Young.
+$$(\prod _{i=0} ^{n} a_i^{1/n})^{n/n+1}\cdot a_{n+1}^{1/n+1}\le \frac {n} {n+1} \prod _{i=0} ^{n} a_i^{1/n}+\frac {1} {n+1} a_{n+1}\le (\sum _{i=0} ^{n}a_i + a_{n+1})\cdot \frac{1}{n+1}=AM$$ dove nell'ultima disuguaglianza si è fatto uso dell'ipotesi induttiva di AM-GM su $n$ termini\\
+HM-GM.
+Anche qui si procede come prima cercando un modo furbo di applicare Young\\
+QM-AM
+Il passo base per $n=2$ è verificato. La tesi equivale a mostrare $$\sum_{i=0}^{n+1}a_i^2 \ge \frac {1}{n+1}((\sum_{i=0}^{n}a_i)+a_{n+1})^2= \frac {1}{n+1}((\sum_{i=0}^{n}a_i)^2+a_{n+1}^2+2a_{n+1}(\sum_{i=0}^{n}a_i))$$
+Moltiplicando ambo i membri della disuguaglianza e spezzando alcuni addendi abbiamo $$n\sum_{i=0}^{n+1}a_i^2+\sum_{i=0}^{n}a_i^2+na_{n+1}^2\ge (\sum_{i=0}^{n}a_i^2)^2+2a_{n}\sum_{i=0}^{n}a_i^2$$
+Si noti ora che $$\sum_{i=0}^{n}a_i^2 +na_{n+1}^2\ge 2a_{n+1}\sum_{i=0}^{n}a_i$$ in quanto portando a sinistra la sommatoria otteniamo la somma di $n$ quadrati
+Ma $$n\sum_{i=0}^{n}a_i^2\ge(\sum_{i=0}^{n}a_i)^2$$ per ipotesi induttiva. Dunque tutti gli addendi a LHS maggiorano quelli a RHS e dunque la tesi è verificata.
+
+
+\ex{2.15}
+La disuguaglianza a sinistra è ovvia. Per mostrare la disuguaglianza a destra si riscrive come $\frac{x+n-1}{n}>x^{1/n}$ che è AM-GM sulla n-upla costituita da $x$ e $n-1$ volte 1.
+
+\ex{2.22}
+Riscriviamo come $$(\sum_{i=0}^na_i)^2\le\sum_{i=0}^{n}a_i^2\Leftrightarrow2\sum_{i\neq j}^{n}a_ia_j\le (n-1)(\sum_{i=0}^{n}a_i^2)$$ 
+che può essere riscritto portando RHS a sinistra come $$\sum_{i=0,j\neq i}^{n} (a_i-a_j)^2$$ ossia come somma dei quadrati delle $n(n-1)$ differenze. Pertanto la tesi è verificata.
+\ex{2.24}
+La tesi equivale a $(\frac{1}{n}\sum_{i=0}^na_i)^p\le \frac{1}{n}\sum_{i=0}^na_i^p$.
+Dato che la disugaglianza è omogenea prendiamo come ipotesi di comodo $$(\frac{1}{n}\sum_{i=0}^na_i)^p=1\Rightarrow \frac{1}{n}\sum_{i=0}^na_i=1$$.
+Effettuiamo il seguente cambio di variabile: $a_i\rightarrow 1+b_i$, con $\sum_{i=0}^nb_i=0,b_i\ge 0$. Otteniamo $$\frac{1}{n}\sum_{i=0}^n(1+b_i)^p\ge 1$$ che è vera applicando ad ogni addendo di LHS la disuguaglianza di Bernoulli con le ipotesi sulla somma descritte in precedenza.
 \ex{2.29} 
 Disuguaglianza a sinistra: usare come ipotesi di comodo $abcd=1$. Effettuare il cambio di variabili $a \rightarrow \frac {1} {a}$ e cicliche. Si conclude dopo un passaggio per per la disuguaglianza fra medie $M_{1/3}\ge M_0=GM$.\\
 Disuguaglianza centrale: effettuare il seguente cambio di variabile: $a\rightarrow a^6$ e cicliche.
@@ -139,7 +164,7 @@ Guardando primo e ultimo membro si ha un assurdo. Per valutare l' ordine di cres
 \ex{5.19} Passare al complementare e usare \rec{5.20}
 \ex{5.20} \NINI
 \ex{5.21} Contarli come in \rec{5.16}
-\ex{5.26} Caratterizzare i chiusi come gli insiemi che contengono i loro punti di accumulazione. 
+\ex{5.22} Caratterizzare i chiusi come gli insiemi che contengono i loro punti di accumulazione. 
 \ex{5.23} Bisezionare ed ogni volta e scegliere negli intervalli creati un qualsiasi elemento (se c'è) di $F$. (si generalizza ad $\RR^{n}$)
 
 \ex{5.30} Seconda parte: supponiamo per assurdo $\card(A) > \card(\NN)$. Operiamo una bisezione su $A$ per vedere dove ci sono una quantit\`a pi\`u che numerabile di punti: ad ogni bisezione sono ad un bivio e la scelta pu\`o essere {\it libera} o {\it obbligata}. Pu\`o essere {\it libera} se da entrambi i lati ci sono una quantit\`a pi\`u che numerabile di punti. Non si possono presentare definitivamente scelte {\it obbligate}: qualunque successione di scelte {\it libere} io faccia prima o poi mi si presenter\`a un'altra scelta {\it libera} (se no in quell'intervallo avrei solo una quantit\`a numerabile di punti). Ma allora ho libert\`a $\card(\NN)$ volte di scegliere tra due possibilit\`a: almeno $\card(2^{\NN}) \equip \card(\RR)$ punti di accumulazione.\\
