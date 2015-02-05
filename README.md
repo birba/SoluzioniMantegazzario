@@ -7,7 +7,7 @@ Ecco come si procede alla LETTURA:
 
 ci si copia il codice e si salva su un file Gedit.tex con il nome "SoluzioniMantegazzario.tex", dalla stessa 
 
-cartella in cui si è salvato si da il comando "pdflatex SoluzioniMantegazzario.tex". Così producete il pdf leggibile.
+cartella in cui si è salvato si da (via terminale) il comando "pdflatex SoluzioniMantegazzario.tex". Così producete il pdf leggibile.
 
 Ecco come si procede per la SCRITTURA:
 
@@ -25,9 +25,9 @@ Ecco come si procede per la SCRITTURA:
 
 aprite in questa cartella il terminale;
 
-6) Scrivete le vostre soluzioni sul file sorgente;
+6) Scrivete le vostre soluzioni sul file sorgente (usando un qualsiasi editor tipo Gedit);
 
-7) Avete scritto tutto. Volete ora mettere in rete per aggiornare. per farlo dovete scrivere due comandi;
+7) Avete scritto tutto. Volete ora mettere in rete per aggiornare. Per farlo dovete scrivere due comandi;
 
 8) scrivete "git commit -a" per dire al computer cosa volete copiare; vi si chiederà di mettere un commento e se siete 
 sicuri di quel che volete fare (siate sicuri non si distrugge nulla);
