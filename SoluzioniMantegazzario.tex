@@ -103,14 +103,14 @@ Nel seguito useremo le seguenti convenzioni: \\
 \ex{2.13}
 AM-GM.
 Induzione. Il passo base per $n=2$ si verifica facilmente. Assumiamo ora che la disuguaglianza sia vera per $n$ termini e mostriamola per $n+1$.
-$$(\prod _{i=0} ^{n+1} a_i)^{1/n+1}=(\prod _{i=0} ^{n} a_i)^{1/n+1}\cdot a_{n+1}^{1/n+1}=(\prod _{i=0} ^{n} a_i^{1/n})^{n/n+1}\cdot a_{n+1}^{1/n+1}$$.
+$$\left(\prod _{i=0} ^{n+1} a_i\right)^{1/n+1}=\left(\prod _{i=0} ^{n} a_i\right)^{1/n+1}\cdot a_{n+1}^{1/n+1}=\left(\prod _{i=0} ^{n} a_i^{1/n}\right)^{n/n+1}\cdot a_{n+1}^{1/n+1}$$.
 Si noti ora che gli esponenti dei due fattori sommano ad 1. Applichiamo dunque Young.
-$$(\prod _{i=0} ^{n} a_i^{1/n})^{n/n+1}\cdot a_{n+1}^{1/n+1}\le \frac {n} {n+1} \prod _{i=0} ^{n} a_i^{1/n}+\frac {1} {n+1} a_{n+1}\le (\sum _{i=0} ^{n}a_i + a_{n+1})\cdot \frac{1}{n+1}=AM$$ dove nell'ultima disuguaglianza si è fatto uso dell'ipotesi induttiva di AM-GM su $n$ termini\\
+$$\left(\prod _{i=0} ^{n} a_i^{1/n}\right)^{n/n+1}\cdot a_{n+1}^{1/n+1}\le \frac {n} {n+1} \prod _{i=0} ^{n} a_i^{1/n}+\frac {1} {n+1} a_{n+1}\le \left(\sum _{i=0} ^{n}a_i + a_{n+1}\right)\cdot \frac{1}{n+1}=AM$$ dove nell'ultima disuguaglianza si è fatto uso dell'ipotesi induttiva di AM-GM su $n$ termini\\
 HM-GM.
 Anche qui si procede come prima cercando un modo furbo di applicare Young\\
 QM-AM
-Il passo base per $n=2$ è verificato. La tesi equivale a mostrare $$\sum_{i=0}^{n+1}a_i^2 \ge \frac {1}{n+1}((\sum_{i=0}^{n}a_i)+a_{n+1})^2= \frac {1}{n+1}((\sum_{i=0}^{n}a_i)^2+a_{n+1}^2+2a_{n+1}(\sum_{i=0}^{n}a_i))$$
-Moltiplicando ambo i membri della disuguaglianza e spezzando alcuni addendi abbiamo $$n\sum_{i=0}^{n+1}a_i^2+\sum_{i=0}^{n}a_i^2+na_{n+1}^2\ge (\sum_{i=0}^{n}a_i^2)^2+2a_{n}\sum_{i=0}^{n}a_i^2$$
+Il passo base per $n=2$ è verificato. La tesi equivale a mostrare $$\sum_{i=0}^{n+1}a_i^2 \ge \frac {1}{n+1}\left(\left(\sum_{i=0}^{n}a_i\right)+a_{n+1}\right)^2= \frac {1}{n+1}\left(\left(\sum_{i=0}^{n}a_i\right)^2+a_{n+1}^2+2a_{n+1}\left(\sum_{i=0}^{n}a_i\right)\right)$$
+Moltiplicando ambo i membri della disuguaglianza e spezzando alcuni addendi abbiamo $$n\sum_{i=0}^{n+1}a_i^2+\sum_{i=0}^{n}a_i^2+na_{n+1}^2\ge \left(\sum_{i=0}^{n}a_i^2\right)^2+2a_{n}\sum_{i=0}^{n}a_i^2$$
 Si noti ora che $$\sum_{i=0}^{n}a_i^2 +na_{n+1}^2\ge 2a_{n+1}\sum_{i=0}^{n}a_i$$ in quanto portando a sinistra la sommatoria otteniamo la somma di $n$ quadrati
 Ma $$n\sum_{i=0}^{n}a_i^2\ge(\sum_{i=0}^{n}a_i)^2$$ per ipotesi induttiva. Dunque tutti gli addendi a LHS maggiorano quelli a RHS e dunque la tesi è verificata.
 
@@ -119,18 +119,17 @@ Ma $$n\sum_{i=0}^{n}a_i^2\ge(\sum_{i=0}^{n}a_i)^2$$ per ipotesi induttiva. Dunqu
 La disuguaglianza a sinistra è ovvia. Per mostrare la disuguaglianza a destra si riscrive come $\frac{x+n-1}{n}>x^{1/n}$ che è AM-GM sulla n-upla costituita da $x$ e $n-1$ volte 1.
 
 \ex{2.22}
-Riscriviamo come $$(\sum_{i=0}^na_i)^2\le\sum_{i=0}^{n}a_i^2\Leftrightarrow2\sum_{i\neq j}^{n}a_ia_j\le (n-1)(\sum_{i=0}^{n}a_i^2)$$ 
-che può essere riscritto portando RHS a sinistra come $$\sum_{i=0,j\neq i}^{n} (a_i-a_j)^2$$ ossia come somma dei quadrati delle $n(n-1)$ differenze. Pertanto la tesi è verificata.
+Riscriviamo come $$\left(\sum_{i=0}^na_i\right)^2\le\sum_{i=0}^{n}a_i^2\Leftrightarrow 2\sum_{i\neq j}^{n}a_ia_j\le (n-1)\left(\sum_{i=0}^{n}a_i^2\right)$$ 
+che può essere riscritto portando RHS a sinistra come $$\sum_{i=0,\, j\neq i}^{n} (a_i-a_j)^2$$ ossia come somma dei quadrati delle $n(n-1)$ differenze. Pertanto la tesi è verificata.
 \ex{2.24}
 La tesi equivale a $(\frac{1}{n}\sum_{i=0}^na_i)^p\le \frac{1}{n}\sum_{i=0}^na_i^p$.
-Dato che la disugaglianza è omogenea prendiamo come ipotesi di comodo $$(\frac{1}{n}\sum_{i=0}^na_i)^p=1\Rightarrow \frac{1}{n}\sum_{i=0}^na_i=1$$.
-Effettuiamo il seguente cambio di variabile: $a_i\rightarrow 1+b_i$, con $\sum_{i=0}^nb_i=0,b_i\ge 0$. Otteniamo $$\frac{1}{n}\sum_{i=0}^n(1+b_i)^p\ge 1$$ che è vera applicando ad ogni addendo di LHS la disuguaglianza di Bernoulli con le ipotesi sulla somma descritte in precedenza.
+Dato che la disugaglianza è omogenea prendiamo come ipotesi di comodo $$\left(\frac{1}{n}\sum_{i=0}^na_i\right)^p=1\Rightarrow \frac{1}{n}\sum_{i=0}^na_i=1$$Effettuiamo il seguente cambio di variabile: $a_i\rightarrow 1+b_i$, con $\sum_{i=0}^nb_i=0,b_i\ge 0$. Otteniamo $$\frac{1}{n}\sum_{i=0}^n\left(1+b_i\right)^p\ge 1$$ che è vera applicando ad ogni addendo di LHS la disuguaglianza di Bernoulli con le ipotesi sulla somma descritte in precedenza.
 \ex{2.29} 
-Disuguaglianza a sinistra: usare come ipotesi di comodo $abcd=1$. Effettuare il cambio di variabili $a \rightarrow \frac {1} {a}$ e cicliche. Si conclude dopo un passaggio per per la disuguaglianza fra medie $M_{1/3}\ge M_0=GM$.\\
+{\it Disuguaglianza a sinistra:} usare come ipotesi di comodo $abcd=1$. Effettuare il cambio di variabili $a \rightarrow \frac {1} {a}$ e cicliche. Si conclude dopo un passaggio per per la disuguaglianza fra medie $M_{1/3}\ge M_0=GM$.\\
 Disuguaglianza centrale: effettuare il seguente cambio di variabile: $a\rightarrow a^6$ e cicliche.
-Otteniamo $$3(a^2 b^2 c^2+a^2 b^2 d^2+a^2 c^2 d^2+b^2 c^2 d^2\le 2(a^3 b^3+a^3 c^3+a^3 d^3+b^3 c^3+b^3 d^3+c^3 d^3)$$. Si noti ora che $$3a^2 b^2 c^2\le  a^3b^3+a^3c^3+b^3c^3$$ per AM-GM. 
-Ripetendo il procedimento per ogni addendo a LHS e sommando le disuguaglianze otteniamo proprio la tesi.
-Disuguaglianza a destra: effettuare il cambio di variabile $a\rightarrow a^2$ e cicliche. Otteniamo $$3(a^2+b^2+c^2+d^2)\ge ab+ac+ad+bc+bd+cd$$ $$\Leftrightarrow (a-b)^2+(a-c)^2+(a-d)^2+(b-c)^2+(b-d)^2+(c-d)^2\ge 0$$ che è vera.
+Otteniamo $$3(a^2 b^2 c^2+a^2 b^2 d^2+a^2 c^2 d^2+b^2 c^2 d^2)\le 2(a^3 b^3+a^3 c^3+a^3 d^3+b^3 c^3+b^3 d^3+c^3 d^3)$$Si noti ora che $$3a^2 b^2 c^2\le  a^3b^3+a^3c^3+b^3c^3$$ per AM-GM. 
+Ripetendo il procedimento per ogni addendo a LHS e sommando le disuguaglianze otteniamo proprio la tesi.\\
+{\it Disuguaglianza a destra:} effettuare il cambio di variabile $a\rightarrow a^2$ e cicliche. Otteniamo $$3(a^2+b^2+c^2+d^2)\ge ab+ac+ad+bc+bd+cd$$ $$\Leftrightarrow (a-b)^2+(a-c)^2+(a-d)^2+(b-c)^2+(b-d)^2+(c-d)^2\ge 0$$ che è vera.
 
 \ex{2.30}
 Legare la lunghezza delle proiezioni a quella dei rispettivi lati in una formula che indichi l'area complessiva del triangolo. 
@@ -151,7 +150,7 @@ Guardando primo e ultimo membro si ha un assurdo. Per valutare l' ordine di cres
 \ex{4.17} Usate la sommazione per parti di Abel, ovvero \rec{1.25}. (Non \`e affatto inutile come sembra)
 \ex{4.19} Usate nuovamente la sommazione per parti di Abel (\rec{1.25})
 \ex{4.21} Ancora sommazione per parti (\rec{1.25})
-\ex{4.22} Pongo $\frac{b_n}{a_n} = 1 + \varepsilon_n$: serve che $\sum (-1)^n a_n$ converga e $\sum (-1)^n \varepsilon_n a_n$ diverga. Trovare tali $a_n$ e $\varepsilon_n$.
+\ex{4.22} Pongo $\frac{b_n}{a_n} = 1 + \epsilon_n$: serve che $\sum (-1)^n a_n$ converga e $\sum (-1)^n \epsilon_n a_n$ diverga. Trovare tali $a_n$ e $\epsilon_n$.
 \ex{4.27} Osservare che $\frac{1}{n-1} = \sum_{j \ge 1} \frac{1}{n^j}$ e fattorizzare.
 \ex{4.32} Dare la formula chiusa per $\sum_{k=1}^{n} \sin(k)$ scrivendola come geometrica di esponenziali complessi. Poi usare sommazione per parti di Abel (\rec{1.25}).
 
@@ -233,13 +232,13 @@ Pongo ora su $V$ la norma  {\it euclidea}:
 $$
 \Norm{v}_{\mathcal{E}}:=\max_i\{\norm{\lambda_i}\}
 $$
-mostriamo che $B_{\mathcal{E}}$, la palla unitaria, è compatta per successioni. Data una successione di vettori unitari in $V$ le loro componenti sono $d$ successioni di reali in $[-1,1]$ dunque per Bolzano-Weierstrass hanno una sottosuccessione convergente. Considero ora un' altra generica norma su $V$ e la penso come funzione dalla palla unitaria in $\RR$:
+mostriamo che $B_{\mathcal{E}}$, la sfera unitaria, è compatta per successioni. Data una successione di vettori unitari in $V$ le loro componenti sono $d$ successioni di reali in $[-1,1]$ dunque per Bolzano-Weierstrass hanno una sottosuccessione convergente. Considero ora un' altra generica norma su $V$ e la penso come funzione dalla sfera unitaria in $\RR$:
 $$\Norm{\cdot}\, : B_{\mathcal{E}}\rightarrow \RR$$
-Questa funzione è continua rispetto alla metrica indotta da $\Norm{\cdot}_{\mathcal{E}}$ infatti si conta:
+Questa funzione è continua rispetto alla metrica indotta da $\Norm{\cdot}_{\mathcal{E}}$, in effetti si ha che è lipschitziana:
 $$
 \Norm{u-v}\leq\sum_{i=1}^{d}\norm{u_i-v_i}\Norm{\vec{e_i}}\leq d\cdot\max_i\{\norm{u_i-v_i}\}\cdot \max_i\{\Norm{\vec{e_i}}\}=K \Norm{u-v}_{\mathcal{E}}
 $$
-Quindi per Weierstrass ammette $\max=M$ e $\min=m$. Dunque si ha, per un generico $u\in B_{\mathcal{E}}$: 
+Quindi per Weierstrass ammette $\max=M$ e $\min=m$, che devono essere positivi. Dunque si ha, per un generico $u\in B_{\mathcal{E}}$: 
 $$m\Norm{u}_{\mathcal{E}}\leq \Norm{u}_2\leq M\Norm{u}_{\mathcal{E}}$$
 Abbiamo mostrato che ogni norma è equivalente a $\Norm{\cdot}_{\mathcal{E}}$; e poichè relazione di bi-lipschitz equivalenza gode della proprietà transitiva abbiamo finito.\\ 
 Per la seconda domanda si prenda $V$ come l' insieme delle successioni a valori reali assolutamente sommabili, le seguenti norme non sono equivalenti:
@@ -268,7 +267,7 @@ Chiaramente $\bigcup_{x\in X}B_{\epsilon_x}(x)\supseteq X$ dunque $\{B_{\epsilon
 {\it Compattezza sequenziale} $\Rightarrow$ {\it Totale limitatezza}.\\
 Fissato un $\epsilon > 0$ e scelto un $x_0 \in X$ definisco ricorsivamente una sequenza $(x_n)$ scegliendo ogni termine in modo che:
 $$x_{n} \in X \setminus \bigcup_{i=0}^{n-1}B_\epsilon(x_i)$$
-Opero una dicotomia ({\it cit}):
+Opero una dicotomia ({\it cit.}):
 \begin{itemize}
 \item Se esiste $N$ tale che $X \setminus \bigcup_{i=0}^{N}B_\epsilon(x_i) = \emptyset $ ho trovato un ricoprimento finito;
 \item Se un tale $N$ non esiste allora ho ottenuto una successione $(x_n)$. Per compattezza deve avere una sottosuccessione convergente (dunque di Cauchy): ma questo è assurdo perché comunque presi $m>n$ ho che:
@@ -279,16 +278,33 @@ $$
 {\it Compattezza sequenziale} $\Rightarrow$ {\it Completezza}.\\
 Sia $(x_n)$ una successione di Cauchy; per compattezza ammette una sottosuccessione convergente ma, essendo di Cauchy $(x_n)$ converge per $\rec{6.13}$.\\
 {\it Completezza} $\wedge$ {\it Totale limitatezza} $\Rightarrow$ {\it Compattezza sequenziale}.\\
-Prendo una qualsiasi successione $(x_n)\subseteq X$; voglio definire ricorsivamente una sua sottosuccessione convergente; per completezza mi basta farla di Cauchy. Per totale limitatezza posso ricoprire tutto $X$ con numero finito di palle di raggio arbitrariamente fissato (diciamo $r_0=1$). La mia successione dovrà cadere infinite volte in almeno una di queste palle (per pigeonhole); ne prendo una e la chiamo $B_0$ e, poichè un sottoinsieme di un totalmente limitato è totalmente limitato, anche $B_0$ è totalmente limitato. Ma $B_0$ contiene infiniti termini della successione quindi, dato un qualunque suo ricoprimento finito posso trovare una $B_1\subset B_0$ di raggio arbitrario ($r_1=1/2$) che contiene ancora infiniti elementi della successione. Definisco così induttivemente i $B_k$ e li scelgo ogni volta di raggio $2^{-k}$. Definisco ora la mia sottosuccessione $(x_{n(k)})_{k\in\NN}$ così:
+Prendo una qualsiasi successione $(x_n)\subseteq X$; voglio definire ricorsivamente una sua sottosuccessione convergente; per completezza mi basta farla di Cauchy. Per totale limitatezza posso ricoprire tutto $X$ con numero finito di palle di raggio arbitrariamente fissato (diciamo $r_0=1$). La mia successione dovrà cadere infinite volte in almeno una di queste palle (per pigeonhole); ne prendo una e la chiamo $B_0$ e, poichè un sottoinsieme di un totalmente limitato è totalmente limitato, anche $B_0$ è totalmente limitato. Ma $B_0$ contiene infiniti termini della successione quindi, dato un qualunque suo ricoprimento finito posso trovare una $B_1\subset B_0$ di raggio arbitrario ($r_1=1/2$) che contiene ancora infiniti elementi della successione. Definisco così induttivemente i $B_k$ e li scelgo ogni volta di raggio $2^{-k}$. Definisco ora la mia sottosuccessione $(x_{n_k})_{k\in\NN}$ così:
 $$
-n(k):=\min\left\{j\in\NN\mid j>n(k-1)\, \wedge\, x_j\in B_k\right\}
+n_{k}:=\min\left\{j\in\NN\mid j>n_{k-1}\, \wedge\, x_j\in B_k\right\}
 $$ 
 perchè l' insieme di cui prendo il minimo non è mai vuoto. Ma la sottosuccessione così definita è chiaramente di Cauchy.\\
-{\it Totale limitatezza $\wedge$ Compattezza sequenziale $\Rightarrow$ Compattezza per ricoprimenti}\\
-Sia dato un ricoprimento aperto $\{A_{\lambda}\}_{\lambda\in\Lambda}$. Per compattezza sequenziale esiste un {\it numero di Lebesgue $\rho$} positivo (\rec{6.50}). Per totale limitatezza esiste un ricoprimento finito con palle di raggio $\rho$; sia $\{B(x_1),\ldots,B(x_n)\}$ tale ricoprimento finito. Per definizione di numero di Lebesgue ho che ognuna di queste palle $B(x_i)$ è contenuta in almeno un aperto $A_{\lambda_i}$ del mio ricoprimento; si ha dunque che $\{A_{\lambda_1},\ldots,A_{\lambda_n}\}$ è ancora un ricoprimento del mio insieme ed è chiaramente finito.\\
+{\it Totale limitatezza $\wedge$ Compattezza sequenziale $\Rightarrow$ Compattezza per ricoprimenti}.\\
+Sia dato un ricoprimento aperto $\{A_{\lambda}\}_{\lambda\in\Lambda}$. Per compattezza sequenziale esiste un {\it numero di Lebesgue $\rho$} positivo (\rec{6.50}). Per totale limitatezza esiste un ricoprimento finito con palle di raggio $\rho$; sia $\{B_{\rho}(x_1),\ldots,B_{\rho}(x_n)\}$ tale ricoprimento finito. Per definizione di numero di Lebesgue ho che ognuna di queste palle $B_{\rho}(x_i)$ è contenuta in almeno un aperto $A_{\lambda_i}$ del mio ricoprimento; si ha dunque che $\{A_{\lambda_1},\ldots,A_{\lambda_n}\}$ è ancora un ricoprimento del mio insieme ed è chiaramente finito.\\
 {\it Totale limitatezza} $\Rightarrow$ {\it Separabilità}.\\
-Voglio costruire un sottoinsieme denso e numerabile. Per ogni $\epsilon_k=2^{-k}$ ho un ricoprimento finito di $\epsilon_k-$palle. Sia $C_k=\{c_1,\ldots,c_{n(k)}\}$ l' insieme dei centri di queste palle. L' insieme $C=\bigcup_{k\in\NN}C_k$ è numerabile (in quanto unione numerabile di insiemi finiti) e denso, infatti dato un qualsiasi $x\in X$ ed $\epsilon>0$ so che $x$ è contenuto in una palla del mio $\epsilon-$ricoprimento finito, cioè dista meno di $\epsilon$ dal un centro di queste palle, che è un elemento di $C$. Per l'arbitrarietà di $\epsilon$ ogni palla centrata in $x$ interseca $C$.
-
+Voglio costruire un sottoinsieme denso e numerabile. Per ogni $\epsilon_k=2^{-k}$ ho un ricoprimento finito di $\epsilon_k-$palle. Sia $C_k=\{c_1,\ldots,c_{n(k)}\}$ l' insieme dei centri di queste palle. L' insieme $C=\bigcup_{k\in\NN}C_k$ è numerabile (in quanto unione numerabile di insiemi finiti) e denso, infatti dato un qualsiasi $x\in X$ ed $\epsilon>0$ so che $x$ è contenuto in una palla del mio $\epsilon-$ricoprimento finito, cioè dista meno di $\epsilon$ dal un centro di queste palle, che è un elemento di $C$. Per l'arbitrarietà di $\epsilon$ ogni palla centrata in $x$ interseca $C$.\\
+\ex{6.55}{\it Separabilità $\Rightarrow$ Topologia a base numerabile.}\\
+Per ipotesi esiste $D$ un sottoinsieme denso e numerabile. Voglio mostrare che
+$$\mathcal{B}=\{B_q(d)\mid q\in\QQ^+ \wedge d\in D\}$$
+è una base per la mia topologia, essendo chiaramente $\norm{\mathcal{B}}=\norm{D\cart \QQ}=\aleph_0$. Prendo un generico $A\subseteq X$ aperto e un generico $a\in A$. So che esiste $r>0$ tale che $B_{2r}(a)\subseteq A$. Ma per densità posso scegliere un $b$ in $B_r(a)\cap D$; a questo punto scelgo un razionale $q$ tale che $d(a,b)<q<r$ ed ho che:
+$$
+\{a\}\subseteq B_q(b)\subseteq B_{2r}(a)\subseteq A
+$$
+prendendo a primo e ultimo membro l' unione per ogni $a\in A$ ottengo che $A$ si scriveva come unione di palle di raggio razionale e centro in $D$ cioè come unione di elementi di $\mathcal{B}$. Osserviamo che in realtà l' unione che abbiamo fatto è {\it sovrabbondante}, in effetti si può fare numerabile perchè stiamo unendo elementi di una famiglia numerabile ($\mathcal{B}$).\\
+{\it Topologia a base numerabile $\Rightarrow$ Separabilità.}\\
+Scegliamo un rappresentante per ogni insieme in $\mathcal{B}$. Mostriamo che quest' insieme è denso (è ovviamente numerabile essendolo $\mathcal{B}$), per farlo basta osservare che ogni palla aperta centrata in ogni punto è un aperto, dunque si scrive come unione di elementi di $\mathcal{B}$, dunque contiene un elemento che avevo scelto in partenza.\\
+\ex{6.60} Sia $\{A_{\lambda}\}_{\lambda\in\Lambda}$ il mio ricoprimento aperto e $D$ il mio denso e numerabile, per $\rec{6.55}$ ho $\mathcal{B}$ una base numerabile per la topologia. Prendo ora un generico $x\in X$ e osservo che appartiene ad un $A_{\lambda_x}$, ma quest' ultimo si scrive come unione {\it numerabile} di elementi di ${\mathcal{B}}$; dunque esiste $B_x \in \mathcal{B}$ tale che $x\in B_x\subseteq A_{\lambda_x}$. Resta dunque definita una funzione:
+$$
+\varphi:\,  X \rightarrow \mathcal{B} \rightarrow \Lambda
+$$
+$$
+\varphi: x\, \mapsto\, B_x\, \mapsto \, \lambda_x
+$$
+Essendo i $B_x$ numerabili ho che $\varphi(X)$ è numerabile, ma praticamente per definizione $\displaystyle \bigcup_{\lambda \in \varphi (X)}A_{\lambda}\supseteq X$. 
 \section{Continuità}
 \ex{7.40}Controsempio cannonoso: Fissiamo una base di Hamel di $\RR$ come spazio vettoriale su $\QQ$. Ora ogni reale $x$ si scrive come combinazione lineare {\it finita}: $x=\sum_{i=0}^{n_x} \frac{p_i}{q_i}\, b_i$. Definisco:
 $$
