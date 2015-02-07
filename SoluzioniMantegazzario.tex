@@ -35,7 +35,7 @@ Andrea Marino, Gianluca Tasinato, Marco Costa}
 }%
 
 \newcommand{\su}[2]{\sfrac{#1}{#2}}
-
+\renewcommand*\rmdefault{ppl}
 \newcommand{\PP}{\mathbb{P}}
 \newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\NN}{\mathbb{N}}
@@ -51,7 +51,7 @@ Andrea Marino, Gianluca Tasinato, Marco Costa}
 
 \newcommand{\gen}[1]{\langle #1 \rangle}
 \newcommand{\tc}{\mbox{ t.c. }}
-\newcommand{\Norm}[1]{ \lVert {#1} \rVert}
+\newcommand{\Norm}[1]{\left \| #1 \right\|}
 \newcommand{\Zx}{\mathbb{Z}[x]}
 \newcommand{\Qx}{\QQ[x]}
 \newcommand{\Zp}{\su{\mathbb{Z}}{p\mathbb{Z}}}
@@ -251,7 +251,7 @@ in effetti non inducono neppure la stessa topologia poichè esistono successioni
 $$
 \epsilon>\sum_{i=M}^{N}\Norm{x_i}\geq \Norm{\sum_{i=M}^{N}x_i}=\Norm{S_N-S_M}\qquad\quad N,M \geq n_{\epsilon}
 $$
-Dunque la successione $S_N\in V$ e di Cauchy e per completezza converge.
+Dunque la successione $S_N\in V$ e di Cauchy e per completezza converge.\\ 
 {\it Convergenza assoluta $\Rightarrow$ Completezza.} Supponiamo $V$ incompleto. Esiste dunque $(x_n)$ che ha la proprietà di Cauchy ma non converge in $V$. Usando nella definizione di Cauchy $\epsilon=2^{-j}$ estraggo una sottosuccessione $(x_{n(j)})$ tale che la successione di partenza stia definitivamente in $B_{2^{-j}}(x_{n(j)})$ e scelgo sempre $x_{n(j+1)}\in B_{2^{-j}}(x_{n(j)})$. Osservo che anche $(x_{n(j)})$ ha la proprietà di Cauchy e per $\rec{6.13}$ neanche lei converge. Posto $y_j:=x_{n(j+1)}-x_{n(j)}$ ho che:
 $$
 \sum_{j=1}^{\infty}\Norm{y_j}\leq \sum_{j\in\NN}2^{-j}=1\quad \Rightarrow\quad x_{n(k)}-x_{n(0)}=\sum_{i=1}^{k}y_j\rightarrow \ell\ \  \Rightarrow\ \  x_{n(k)}\mbox{ converge}
@@ -297,14 +297,15 @@ $$
 prendendo a primo e ultimo membro l' unione per ogni $a\in A$ ottengo che $A$ si scriveva come unione di palle di raggio razionale e centro in $D$ cioè come unione di elementi di $\mathcal{B}$. Osserviamo che in realtà l' unione che abbiamo fatto è {\it sovrabbondante}, in effetti si può fare numerabile perchè stiamo unendo elementi di una famiglia numerabile ($\mathcal{B}$).\\
 {\it Topologia a base numerabile $\Rightarrow$ Separabilità.}\\
 Scegliamo un rappresentante per ogni insieme in $\mathcal{B}$. Mostriamo che quest' insieme è denso (è ovviamente numerabile essendolo $\mathcal{B}$), per farlo basta osservare che ogni palla aperta centrata in ogni punto è un aperto, dunque si scrive come unione di elementi di $\mathcal{B}$, dunque contiene un elemento che avevo scelto in partenza.\\
-\ex{6.60} Sia $\{A_{\lambda}\}_{\lambda\in\Lambda}$ il mio ricoprimento aperto e $D$ il mio denso e numerabile, per $\rec{6.55}$ ho $\mathcal{B}$ una base numerabile per la topologia. Prendo ora un generico $x\in X$ e osservo che appartiene ad un $A_{\lambda_x}$, ma quest' ultimo si scrive come unione {\it numerabile} di elementi di ${\mathcal{B}}$; dunque esiste $B_x \in \mathcal{B}$ tale che $x\in B_x\subseteq A_{\lambda_x}$. Resta dunque definita una funzione:
+\ex{6.60} {\it (Teorema di Lindelof).}Sia $\{A_{\lambda}\}_{\lambda\in\Lambda}$ il mio ricoprimento aperto e $D$ il mio denso e numerabile, per $\rec{6.55}$ ho $\mathcal{B}$ una base numerabile per la topologia. Prendo ora un generico $x\in X$ e osservo che appartiene ad un $A_{\lambda_x}$, ma quest' ultimo si scrive come unione {\it numerabile} di elementi di ${\mathcal{B}}$; dunque esiste $B_x \in \mathcal{B}$ tale che $x\in B_x\subseteq A_{\lambda_x}$. Resta dunque definita una funzione:
 $$
 \varphi:\,  X \rightarrow \mathcal{B} \rightarrow \Lambda
 $$
 $$
 \varphi: x\, \mapsto\, B_x\, \mapsto \, \lambda_x
 $$
-Essendo i $B_x$ numerabili ho che $\varphi(X)$ è numerabile, ma praticamente per definizione $\displaystyle \bigcup_{\lambda \in \varphi (X)}A_{\lambda}\supseteq X$. 
+Essendo i $B_x$ numerabili ho che $\varphi(X)$ è numerabile, ma praticamente per definizione $\displaystyle \bigcup_{\lambda \in \varphi (X)}A_{\lambda}\supseteq X$.\\
+\ex{6.63} {\it Teorema di Baire.}) 
 \section{Continuità}
 \ex{7.40}Controsempio cannonoso: Fissiamo una base di Hamel di $\RR$ come spazio vettoriale su $\QQ$. Ora ogni reale $x$ si scrive come combinazione lineare {\it finita}: $x=\sum_{i=0}^{n_x} \frac{p_i}{q_i}\, b_i$. Definisco:
 $$
