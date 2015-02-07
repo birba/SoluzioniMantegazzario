@@ -306,12 +306,28 @@ Essendo i $B_x$ numerabili ho che $\varphi(X)$ è numerabile, ma praticamente pe
 
 \ex{6.62} ({\it Teorema di Baire}) Passando al complementare, voglio mostrare che non è possibile ottenere l'insieme vuoto come intersezione numerabile di aperti densi (qualsiasi palla $B$ non è tutta contenuta in $X$, quindi esiste almeno un $y \in X^c \cap B$). Supponiamo per assurdo esista $\{A_n\}_{n\in\NN}$ collezione di aperti densi a intersezione vuota; costruiamo una successione $(x_n) \tc x_1 \in A_1 \wedge \exists \delta_1 > 0 \quad B_{\delta_1}(x_1) \subseteq A_1, x_2 \in A_2 \cap B_{\delta_1}(x_1) \wedge \exists \delta_2 > 0 \tc B_{\delta_2}(x_2) \subset B_{\delta_1}(x_1), \ldots $. La successione $(x_n)$ così costruita è di Cauchy (\`E dentro una palla di raggio $\delta_k \forall n \ge k$ e posso scegliere la successione del $\delta_k$ in modo che sia infinitesima). Quindi $x_n \rightarrow x \in \cap_{n\in\NN} A_n$, assurdo.
 \section{Continuità}
+\ex{7.6} Osserviamo che una formulazione equivalente è:
+$$
+f\mbox{ surgettiva} \wedge \left( f(x_n)\mbox{ converge} \Rightarrow (x_n) \mbox{ converge} \right) \Rightarrow f \mbox{ continua}
+$$
+Intanto mostriamo che $f$ è iniettiva. Se non lo fosse avrei $f(x)=f(x'):=f$ con $x\neq x'$, prendo la successione:
+$$
+x_{2n}=x\ \mbox{ e }\ x_{2n+1}=x'\ \ \Rightarrow\ f(x_n)\rightarrow f\ \  \wedge\ \ (x_n) \mbox{ non converge}
+$$
+Assurdo, dunque $f$ è bigettiva, considero ora la sua inversa $g$ e riscrivo il problema come:
+$$
+g\mbox{ bigettiva} \wedge \left( (y_n)\mbox{ converge} \Rightarrow g(y_n) \mbox{ converge} \right) \Rightarrow f \mbox{ continua}
+$$
+Posto ora che $y_n\rightarrow y_{\infty}$ e che $g(y_n)\rightarrow g_{\infty}$ considero la successione:
+$$
+z_{2n}=y_{\infty}\ \ \mbox{ e}\ \ z_{2n+1}=y_n\ \ \Rightarrow\ \ g(z_{2n+1})\rightarrow g_{\infty}\\ \mbox{ e}\  \ g(z_{2n})=g(y_{\infty})
+$$
+Per ipotesi di convergenza e per unicità del limite ho: $ g_{\infty}=g(y_{\infty})$. Ma questa è la continuità di $g$. Essendo $g$ continua e bigettiva è monotòna e dunque la sua inversa, cioè $f$, è continua.
 \ex{7.40}Controsempio cannonoso: Fissiamo una base di Hamel di $\RR$ come spazio vettoriale su $\QQ$. Ora ogni reale $x$ si scrive come combinazione lineare {\it finita}: $x=\sum_{i=0}^{n_x} \frac{p_i}{q_i}\, b_i$. Definisco:
 $$
 f:x\mapsto \frac{1}{\gcd(p_1,\ldots,p_{n_x})}
 $$ 
 questa $f$ è effettivamente un controesempio.\\
-\ex{}
 Controesempio alternativo: sia $A=\{\pi,\pi^2,\ldots\}$ definisco $f$ costantemente $1$ su $A$ e nulla altrove. Fissato $\check{x}$ la sua progressione aritmetica casca al più una volta in $A$ (che si riesca anche a fare continua sulla base di questa?)...\\
 Se $f$ è uniformemente continua invece il limite di $f$ è nullo. Prendo $L=\limsup f$ e so che frequentemente c'è qualcuno (sia $x_k$) sopra $L-\epsilon$. Prendo il $\delta$ dell' uniforme continuità e ho che $f([x_k-\delta,x_k+\delta])\ge L-2\epsilon$. Scelgo ora $\check{x}<2\delta$ e applico la prima ipotesi ottenendo un assurdo perchè capito negli intorni di tutti gli $x_k$ ed ho $\limsup_n n\check{x}\ge L-2\epsilon>0$ per l' arbitrarietà di $\epsilon$.
  
