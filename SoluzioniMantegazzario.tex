@@ -297,7 +297,9 @@ $$
 prendendo a primo e ultimo membro l' unione per ogni $a\in A$ ottengo che $A$ si scriveva come unione di palle di raggio razionale e centro in $D$ cioè come unione di elementi di $\mathcal{B}$. Osserviamo che in realtà l' unione che abbiamo fatto è {\it sovrabbondante}, in effetti si può fare numerabile perchè stiamo unendo elementi di una famiglia numerabile ($\mathcal{B}$).\\
 {\it Topologia a base numerabile $\Rightarrow$ Separabilità.}\\
 Scegliamo un rappresentante per ogni insieme in $\mathcal{B}$. Mostriamo che quest' insieme è denso (è ovviamente numerabile essendolo $\mathcal{B}$), per farlo basta osservare che ogni palla aperta centrata in ogni punto è un aperto, dunque si scrive come unione di elementi di $\mathcal{B}$, dunque contiene un elemento che avevo scelto in partenza.\\
-\ex{6.60} {\it (Teorema di Lindelof).}Sia $\{A_{\lambda}\}_{\lambda\in\Lambda}$ il mio ricoprimento aperto e $D$ il mio denso e numerabile, per $\rec{6.55}$ ho $\mathcal{B}$ una base numerabile per la topologia. Prendo ora un generico $x\in X$ e osservo che appartiene ad un $A_{\lambda_x}$, ma quest' ultimo si scrive come unione {\it numerabile} di elementi di ${\mathcal{B}}$; dunque esiste $B_x \in \mathcal{B}$ tale che $x\in B_x\subseteq A_{\lambda_x}$. Resta dunque definita una funzione:
+\ex{6.57} Supponiamo sia separabile, esiste dunque un insieme $D$ denso e numerabile, sia poi $\{A_{\lambda}\}_{\lambda\in\Lambda}$ la nostra famiglia di aperti disgiunti. Per densità si ha che per ogni $\lambda$ esiste $d_{\lambda}\in D$ tale che $d_{\lambda}\in D \cup A_{\lambda}$. Ho dunque una mappa da $\Lambda$ a $D$, si vede che è iniettiva per disgiunzione, da cui l' assurdo per cardinalità.
+\ex{6.59} Posso fare delle funzioni continue che sugli interi valgono solo $\{0, 1\}$. Per ogni numero reale $\xi \in[0,1)$ considero la sua rappresentazione binaria, e gli associo la funzione $\varphi _{\xi}$ che nell' $n$ esimo intero vale l' $n-$esima cifra binaria di $\xi$. Ma le palle aperte di raggio $1/2$ centrate in tali funzioni sono digiunte (infatti la distaza tra due di queste diverse è sempre $1$), si conclude per \rec{6.57}.
+\ex{6.60} {\it (Teorema di Lindelof).} Sia $\{A_{\lambda}\}_{\lambda\in\Lambda}$ il mio ricoprimento aperto e $D$ il mio denso e numerabile, per $\rec{6.55}$ ho $\mathcal{B}$ una base numerabile per la topologia. Prendo ora un generico $x\in X$ e osservo che appartiene ad un $A_{\lambda_x}$, ma quest' ultimo si scrive come unione {\it numerabile} di elementi di ${\mathcal{B}}$; dunque esiste $B_x \in \mathcal{B}$ tale che $x\in B_x\subseteq A_{\lambda_x}$. Resta dunque definita una funzione:
 $$
 \varphi:\,  X \rightarrow \mathcal{B} \rightarrow \Lambda
 $$
@@ -305,13 +307,14 @@ $$
 \varphi: x\, \mapsto\, B_x\, \mapsto \, \lambda_x
 $$
 Essendo i $B_x$ numerabili ho che $\varphi(X)$ è numerabile, ma praticamente per definizione $\displaystyle \bigcup_{\lambda \in \varphi (X)}A_{\lambda}\supseteq X$.\\
-\ex{6.63} {\it Teorema di Baire.}) 
+\ex{6.6}
 \section{Continuità}
 \ex{7.40}Controsempio cannonoso: Fissiamo una base di Hamel di $\RR$ come spazio vettoriale su $\QQ$. Ora ogni reale $x$ si scrive come combinazione lineare {\it finita}: $x=\sum_{i=0}^{n_x} \frac{p_i}{q_i}\, b_i$. Definisco:
 $$
 f:x\mapsto \frac{1}{\gcd(p_1,\ldots,p_{n_x})}
 $$ 
 questa $f$ è effettivamente un controesempio.\\
+\ex{}
 Controesempio alternativo: sia $A=\{\pi,\pi^2,\ldots\}$ definisco $f$ costantemente $1$ su $A$ e nulla altrove. Fissato $\check{x}$ la sua progressione aritmetica casca al più una volta in $A$ (che si riesca anche a fare continua sulla base di questa?)...\\
 Se $f$ è uniformemente continua invece il limite di $f$ è nullo. Prendo $L=\limsup f$ e so che frequentemente c'è qualcuno (sia $x_k$) sopra $L-\epsilon$. Prendo il $\delta$ dell' uniforme continuità e ho che $f([x_k-\delta,x_k+\delta])\ge L-2\epsilon$. Scelgo ora $\check{x}<2\delta$ e applico la prima ipotesi ottenendo un assurdo perchè capito negli intorni di tutti gli $x_k$ ed ho $\limsup_n n\check{x}\ge L-2\epsilon>0$ per l' arbitrarietà di $\epsilon$.
  
