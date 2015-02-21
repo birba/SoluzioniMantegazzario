@@ -34,9 +34,9 @@ sicuri di quel che volete fare (siate sicuri non si distrugge nulla);
 
 9) scrivete "git push" per mettere online il vostro lavoro (vi si chiederà nome utente e password del sito GitHub);
 
-10) Cosa può andare storto? Qualcuno ha cambiato qualcosa e ha aggiornato e dunque voi avete toccato la versione 
+10) Cosa può andare storto? Qualcuno ha cambiato qualcosa e ha aggiornato e dunque voi avete toccato la versione vecchia.
 
-vecchia. Per aggiornare il materiale che avete nella cartella dovete usare il comando "GitPull"; le vostre modifiche 
+Per aggiornare il materiale che avete nella cartella dovete usare il comando "git pull"; le vostre modifiche 
 
 verranno automaticamente mergiate con le altre.
 
