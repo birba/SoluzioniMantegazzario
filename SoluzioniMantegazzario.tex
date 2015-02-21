@@ -63,7 +63,7 @@ Andrea Marino, Gianluca Tasinato, Marco Costa}
 \newcommand{\rec}[1]{{\bf #1}}
 \newcommand{\equip}{\sim}
 \newcommand{\card}{\mathbf{card}}
-\newcommand{\norm}[1]{\mid{#1}\mid}
+\newcommand{\norm}[1]{\vert{#1}\vert}
 \newcommand{\todo}{{\bf TODO Prossimamente}}
 \newcommand{\NINI}{{\bf NINI }}
 \newcommand{\hide}[1]{{\color{white}{#1}}}
@@ -256,11 +256,11 @@ ma questo è assurdo.
 \ex{6.50} Sia dato un ricoprimento aperto $\{A_{\lambda}\}_{\lambda\in\Lambda}$. Supponiamo che l' $\inf$ dei raggi sia $0$. Questo significa che per ogni $\epsilon>0$ esiste una palla $B_{\epsilon}(x_{\epsilon})$ che non è contenuta interamente in nessun aperto del ricoprimento. Per ogni $n$, mi gioco questa proprietà con $\epsilon=1/n$ e definisco come $x_n$ il centro della palla $B_{\epsilon}(x_\epsilon)$. Questa successione ammette una sottosuccessione convergente $(x_{n_k})$ ad un certo elemento $x_{\infty}\in X$, ma questo punto limite deve stare in un certo $A_{\lambda}$ (perchè sono un ricoprimento); dunque esiste $r>0$ tale che $B_r(x_{\infty})\subseteq A_{\lambda}$. In particolare ci saranno infiniti punti della mia sottosuccessione nell' intorno $B_{r/2}(x_{\infty})$. Ma allora scelgo un elemento della sottosuccessione abbastanza avanti in modo che $n_k>2/r$, ottengo quindi che $$B_{1/{n_k}}(x_{n_k})\subseteq B_r(x_{\infty})\subseteq A_{\lambda}$$
 ma questo è assurdo perchè viola la proprietà caratteristica di $x_{n_k}$ (ha la palla di raggio dato interamente contenuta in un aperto del ricoprimento).
 \ex{6.51} (\NINI in spazi metrici) Scelgo una successione tale che $x_n \in F_n$. Tale successione vive in $F_1$ che è compatto dunque qui ammette una sottosuccessione convergente a $x_{\infty}$. Per ogni naturale $N$ osservo che la sottosuccessione vive definitivamente in $F_N$ e per compattezza qui vive il suo limite $x_{\infty}$, ciò prova che $x_{\infty}\in \bigcap_{n\in \NN}F_n$.
-\ex{6.54} {\it Compattezza per ricoprimenti} $\Rightarrow$ {\it Compattezza sequenziale} \\
+\ex{6.54}\centerline{ {\it Compattezza per ricoprimenti} $\Rightarrow$ {\it Compattezza sequenziale}}
 Supponiamo per assurdo che esista una successione $(x_n)_{n\in\NN}$ che non ammette sottosuccessioni convergenti. Questo significa che l' immagine di $(x_n)_{n\in\NN}$ non ha punti di accumulazione, cioè che:
 $$ \forall x\in X\  \exists \epsilon_x > 0: \; \left( B_{\epsilon_x}(x)\setminus \{x\}\right) \cap (x_n)_{n\in\NN} = \emptyset $$
 Chiaramente $\bigcup_{x\in X}B_{\epsilon_x}(x)\supseteq X$ dunque $\{B_{\epsilon_x}(x)\}_{x\in X}$ è un ricoprimento aperto; ma per ipotesi deve ammettere un sottoricoprimento finito che avrà centri $y_1,\ldots,y_k$. Per pigeonhole per almeno un $1\leq i\leq k$ ho che $B_{\epsilon_{y_i}}(y_i)$ contiene infiniti termini della successione, ma per costruzione ne può contenere al più uno. Assurdo.\\
-{\it Compattezza sequenziale} $\Rightarrow$ {\it Totale limitatezza}.\\
+\centerline{{\it Compattezza sequenziale} $\Rightarrow$ {\it Totale limitatezza}}
 Fissato un $\epsilon > 0$ e scelto un $x_0 \in X$ definisco ricorsivamente una sequenza $(x_n)$ scegliendo ogni termine in modo che:
 $$x_{n} \in X \setminus \bigcup_{i=0}^{n-1}B_\epsilon(x_i)$$
 Opero una dicotomia ({\it cit.}):
@@ -271,19 +271,19 @@ $$
 x_m\notin B_{\epsilon}(x_n)\ \Rightarrow\ d(x_m,x_n)>\epsilon
 $$
 \end{itemize}
-{\it Compattezza sequenziale} $\Rightarrow$ {\it Completezza}.\\
+\centerline{{\it Compattezza sequenziale} $\Rightarrow$ {\it Completezza}}
 Sia $(x_n)$ una successione di Cauchy; per compattezza ammette una sottosuccessione convergente ma, essendo di Cauchy $(x_n)$ converge per $\rec{6.13}$.\\
-{\it Completezza} $\wedge$ {\it Totale limitatezza} $\Rightarrow$ {\it Compattezza sequenziale}.\\
+\centerline{{\it Completezza} $\wedge$ {\it Totale limitatezza} $\Rightarrow$ {\it Compattezza sequenziale}}
 Prendo una qualsiasi successione $(x_n)\subseteq X$; voglio definire ricorsivamente una sua sottosuccessione convergente; per completezza mi basta farla di Cauchy. Per totale limitatezza posso ricoprire tutto $X$ con numero finito di palle di raggio arbitrariamente fissato (diciamo $r_0=1$). La mia successione dovrà cadere infinite volte in almeno una di queste palle (per pigeonhole); ne prendo una e la chiamo $B_0$ e, poichè un sottoinsieme di un totalmente limitato è totalmente limitato, anche $B_0$ è totalmente limitato. Ma $B_0$ contiene infiniti termini della successione quindi, dato un qualunque suo ricoprimento finito posso trovare una $B_1\subset B_0$ di raggio arbitrario ($r_1=1/2$) che contiene ancora infiniti elementi della successione. Definisco così induttivemente i $B_k$ e li scelgo ogni volta di raggio $2^{-k}$. Definisco ora la mia sottosuccessione $(x_{n_k})_{k\in\NN}$ così:
 $$
 n_{k}:=\min\left\{j\in\NN\mid j>n_{k-1}\, \wedge\, x_j\in B_k\right\}
 $$ 
 perchè l' insieme di cui prendo il minimo non è mai vuoto. Ma la sottosuccessione così definita è chiaramente di Cauchy.\\
-{\it Totale limitatezza $\wedge$ Compattezza sequenziale $\Rightarrow$ Compattezza per ricoprimenti}.\\
+\centerline{{\it Totale limitatezza $\wedge$ Compattezza sequenziale $\Rightarrow$ Compattezza per ricoprimenti}}
 Sia dato un ricoprimento aperto $\{A_{\lambda}\}_{\lambda\in\Lambda}$. Per compattezza sequenziale esiste un {\it numero di Lebesgue $\rho$} positivo (\rec{6.50}). Per totale limitatezza esiste un ricoprimento finito con palle di raggio $\rho$; sia $\{B_{\rho}(x_1),\ldots,B_{\rho}(x_n)\}$ tale ricoprimento finito. Per definizione di numero di Lebesgue ho che ognuna di queste palle $B_{\rho}(x_i)$ è contenuta in almeno un aperto $A_{\lambda_i}$ del mio ricoprimento; si ha dunque che $\{A_{\lambda_1},\ldots,A_{\lambda_n}\}$ è ancora un ricoprimento del mio insieme ed è chiaramente finito.\\
-{\it Totale limitatezza} $\Rightarrow$ {\it Separabilità}.\\
+\centerline{{\it Totale limitatezza} $\Rightarrow$ {\it Separabilità}}
 Voglio costruire un sottoinsieme denso e numerabile. Per ogni $\epsilon_k=2^{-k}$ ho un ricoprimento finito di $\epsilon_k-$palle. Sia $C_k=\{c_1,\ldots,c_{n(k)}\}$ l' insieme dei centri di queste palle. L' insieme $C=\bigcup_{k\in\NN}C_k$ è numerabile (in quanto unione numerabile di insiemi finiti) e denso, infatti dato un qualsiasi $x\in X$ ed $\epsilon>0$ so che $x$ è contenuto in una palla del mio $\epsilon-$ricoprimento finito, cioè dista meno di $\epsilon$ dal un centro di queste palle, che è un elemento di $C$. Per l'arbitrarietà di $\epsilon$ ogni palla centrata in $x$ interseca $C$.\\
-\ex{6.55}{\it Separabilità $\Rightarrow$ Topologia a base numerabile.}\\
+\ex{6.55}\centerline{{\it Separabilità $\Rightarrow$ Topologia a base numerabile}}
 Per ipotesi esiste $D$ un sottoinsieme denso e numerabile. Voglio mostrare che
 $$\mathcal{B}=\{B_q(d)\mid q\in\QQ^+ \wedge d\in D\}$$
 è una base per la mia topologia, essendo chiaramente $\norm{\mathcal{B}}=\norm{D\cart \QQ}=\aleph_0$. Prendo un generico $A\subseteq X$ aperto e un generico $a\in A$. So che esiste $r>0$ tale che $B_{2r}(a)\subseteq A$. Ma per densità posso scegliere un $b$ in $B_r(a)\cap D$; a questo punto scelgo un razionale $q$ tale che $d(a,b)<q<r$ ed ho che:
@@ -291,7 +291,7 @@ $$
 \{a\}\subseteq B_q(b)\subseteq B_{2r}(a)\subseteq A
 $$
 prendendo a primo e ultimo membro l' unione per ogni $a\in A$ ottengo che $A$ si scriveva come unione di palle di raggio razionale e centro in $D$ cioè come unione di elementi di $\mathcal{B}$. Osserviamo che in realtà l' unione che abbiamo fatto è {\it sovrabbondante}, in effetti si può fare numerabile perchè stiamo unendo elementi di una famiglia numerabile ($\mathcal{B}$).\\
-{\it Topologia a base numerabile $\Rightarrow$ Separabilità.}\\
+\centerline{{\it Topologia a base numerabile $\Rightarrow$ Separabilità}}
 Scegliamo un rappresentante per ogni insieme in $\mathcal{B}$. Mostriamo che quest' insieme è denso (è ovviamente numerabile essendolo $\mathcal{B}$), per farlo basta osservare che ogni palla aperta centrata in ogni punto è un aperto, dunque si scrive come unione di elementi di $\mathcal{B}$, dunque contiene un elemento che avevo scelto in partenza.\\
 \ex{6.57} Supponiamo sia separabile, esiste dunque un insieme $D$ denso e numerabile, sia poi $\{A_{\lambda}\}_{\lambda\in\Lambda}$ la nostra famiglia di aperti disgiunti. Per densità si ha che per ogni $\lambda$ esiste $d_{\lambda}\in D$ tale che $d_{\lambda}\in D \cap A_{\lambda}$. Ho dunque una mappa da $\Lambda$ a $D$, si vede che è iniettiva per disgiunzione, da cui l' assurdo per cardinalità.
 \ex{6.59} Posso fare delle funzioni continue che sugli interi valgono solo $\{0, 1\}$. Per ogni numero reale $\xi \in[0,1)$ considero la sua rappresentazione binaria, e gli associo la funzione $\varphi _{\xi}$ che nell' $n$ esimo intero vale l' $n-$esima cifra binaria di $\xi$. Ma le palle aperte di raggio $1/2$ centrate in tali funzioni sono digiunte (infatti la distaza tra due di queste diverse è sempre $1$), si conclude per \rec{6.57}.
@@ -304,7 +304,7 @@ $$
 $$
 Essendo i $B_x$ numerabili ho che $\varphi(X)$ è numerabile, ma praticamente per definizione $\displaystyle \bigcup_{\lambda \in \varphi (X)}A_{\lambda}\supseteq X$.\\
 
-\ex{6.62} ({\it Teorema di Baire}) Passando al complementare, voglio mostrare che non è possibile ottenere l'insieme vuoto come intersezione numerabile di aperti densi (qualsiasi palla $B$ non è tutta contenuta in $X$, quindi esiste almeno un $y \in X^c \cap B$). Supponiamo per assurdo esista $\{A_n\}_{n\in\NN}$ collezione di aperti densi a intersezione vuota; costruiamo una successione $(x_n) \tc x_1 \in A_1 \wedge \exists \delta_1 > 0 \quad B_{\delta_1}(x_1) \subseteq A_1, x_2 \in A_2 \cap B_{\delta_1}(x_1) \wedge \exists \delta_2 > 0 \tc B_{\delta_2}(x_2) \subset B_{\delta_1}(x_1), \ldots $. La successione $(x_n)$ così costruita è di Cauchy (\`E dentro una palla di raggio $\delta_k \forall n \ge k$ e posso scegliere la successione del $\delta_k$ in modo che sia infinitesima e ogni $y$ nel bordo di $B_{\delta_{n+1}}(x_{n+1})$ sia un punto interno di $B_{\delta_n}(x_n)$ ). Quindi $x_n \rightarrow x \in \cap_{n\in\NN} A_n$, assurdo.
+\ex{6.62} ({\it Teorema di Baire}) Passando al complementare, voglio mostrare che non è possibile ottenere l'insieme vuoto come intersezione numerabile di aperti densi (qualsiasi palla $B$ non è tutta contenuta in $X$, quindi esiste almeno un $y \in X^c \cap B$). Supponiamo per assurdo esista $\{A_n\}_{n\in\NN}$ collezione di aperti densi a intersezione vuota; costruiamo una successione $(x_n) \tc x_1 \in A_1 \wedge \exists \delta_1 > 0 \quad B_{\delta_1}(x_1) \subseteq A_1, x_2 \in A_2 \cap B_{\delta_1}(x_1) \wedge \exists \delta_2 > 0 \tc B_{\delta_2}(x_2) \subset B_{\delta_1}(x_1), \ldots $. La successione $(x_n)$ così costruita è di Cauchy (è dentro una palla di raggio $\delta_k \forall n \ge k$ e posso scegliere la successione del $\delta_k$ in modo che sia infinitesima e ogni $y$ nel bordo di $B_{\delta_{n+1}}(x_{n+1})$ sia un punto interno di $B_{\delta_n}(x_n)$ ). Quindi $x_n \rightarrow x \in \bigcap_{n\in\NN} A_n\neq \emptyset$, assurdo.
 \section{Continuità}
 \ex{7.6} Osserviamo che una formulazione equivalente è:
 $$
@@ -323,6 +323,7 @@ $$
 z_{2n}=y_{\infty}\  \mbox{ e}\  z_{2n+1}=y_n\ \Rightarrow\  g(z_{2n+1})\rightarrow g_{\infty}\\ \mbox{ e}\  g(z_{2n})=g(y_{\infty})
 $$
 Per ipotesi di convergenza e per unicità del limite ho: $ g_{\infty}=g(y_{\infty})$. Ma questa è la continuità di $g$. Essendo $g$ continua e bigettiva è monotòna e dunque la sua inversa, cioè $f$, è continua.
+\ex{7.17}Mostriamo che $f$ manda chiusi in chiusi (dunque $f^{-1}$ controporta chiusi in chiusi dunque è continua). Prendo $C$ chiuso in $X$, per compattezza di $X$ anche $C$ è compatto, dunque la sua immagine tramite $f$ è compatta (Weierstrass), ma, in spazi metrici, ogni compatto è chiuso. 
 \ex{7.40}Controsempio cannonoso: Fissiamo una base di Hamel di $\RR$ come spazio vettoriale su $\QQ$. Ora ogni reale $x$ si scrive come combinazione lineare {\it finita}: $x=\sum_{i=0}^{n_x} \frac{p_i}{q_i}\, b_i$. Definisco:
 $$
 f:x\mapsto \frac{1}{\gcd(p_1,\ldots,p_{n_x})}
