@@ -1,0 +1,23 @@
+\section{Teoria degli Insiemi}
+\ex{1.30 \HP{4}} Riportiamo solo il polinomio bigettivo: $p(x,y) = \frac{1}{2}(x+y+1)(x+y)+x$. Questo polinomio conta i punti a coordinate intere sul piano per diagonali del tipo $x+y = k$.
+
+\ex{1.31} ${\NN}^{\NN} \equip \RR$: \\ ($\ge$) Ad ogni numero reale nell'intervallo $(0,1)$ si associa la successione delle sue cifre. \\ ($\le$) Scriviamo le cifre in base due dell' $i$-esimo numero della successione nell' $i$-esima colonna di una tabella (a partire dalla cifra delle unità).  Leggiamo ora queste cifre per diagonali come le cifre dopo la virgola di un numero reale in base dieci in $[0,1)$.
+
+\ex{1.36} Le funzioni continue da $\RR$ in $\RR$: basta conoscere i valori della funzione sui razionali ed estenderla per continuit\`a. Dunque la cardinalit\`a \`e $\RR^\QQ \equip \RR$.
+
+\ex{1.39} Uso come lemma \rec{1.44}.
+
+\ex{1.40} Uso come lemma la prima met\`a di \rec{1.42}.
+
+\ex{1.41} Dimostro per prima cosa che $A \cart A \equip A$: Considero l'insieme ordinato $$\mathcal{F} := \{(f,X) \mid f: X \cart X \rightarrow X,\, X \subseteq A,\, f \mbox{ bigettiva },\, X \mbox{ infinito}\, \}$$ Osservo che \`e non vuoto. La relazione d'ordine $\preceq$ definita da $$(f,X) \preceq (g,Y) \Leftrightarrow X \subseteq Y \wedge g\mid_{X\cart X} = f$$. \\ Applico Zorn ed ottengo l'esistenza di un massimale $(h, M)$. Se $\card(A \setminus M) < \card(M)$ trovo una bigezione da $A$ in $M$. Altrimenti trovo un elemento pi\`u grande del massimale. (Non immediato)
+
+\ex{1.42} Per la prima met\`a usate Zorn. Per il punto 2 uso il lemma \rec{1.40}.
+
+\ex{1.43} Uso come lemma \rec{1.42} e leggo {\it per colonne e non per righe}.
+
+\ex{1.44} Usate Zorn.
+
+\ex{1.46} Devo dimostrare un po' di disuguaglianze tra cardinalit\`a: ogni volta sostituisco dal lato che voglio dimostrare essere maggiore $X\cart Y$ al posto di $X$ (o $Y$) (usando \rec{1.41} a palla). \\ Ad esempio: supponiamo $\card(Y) \ge \card(X)$; voglio trovare una funzione iniettiva $\Phi$ da $\{f: X \rightarrow Y\}$ in $\{g: X \rightarrow Y \mid g \mbox{ iniettiva }\}$: noto che, essendo $X \cart Y \equip Y$, vale $$\{g: X \rightarrow Y \mid g \mbox{ iniettiva }\} \equip \{g: X \rightarrow X \cart Y \mid g \mbox{ iniettiva }\}$$ Definisco $\Phi(f)$ come la funzione $g$ che manda $x \mapsto (x,f(x))$.
+
+\ex{1.50} Supponiamo esista una funzione iniettiva da RHS in LHS: fissato un indice $i\in \mathcal{I}$, considero la controimmagine di $X_i$: l'insieme delle componenti lungo $Y_i$ di tali controimmagini non pu\`o essere tutto $Y_i$ (perch\`e $\card(X_i) < \card(Y_i)$); quindi esiste $\check{y_i} \in Y_i$ che non \`e la $i$-esima componente di nessun elemento della controimmagine di $X_i$. Dove viene mandato $\prod_{i \in \mathcal{I}} \{\check{y_i}\}$?
+

@@ -1,0 +1,14 @@
+\section{Successioni}
+
+\ex{3.3} Per $\norm{p} < 1$ \`e vera. Altrimenti ci sono controesempi. \hide{logaritmi o cose così}
+
+\ex{3.4} Posto $\Delta_k:=a_k -a_{k-1}$ l' ipotesi si riscrive come: $ 2\Delta_n+\Delta_{n-1}<0$. Osservo che i due addendi non possono essere entrambi positivi. Osserviamo inoltre che preso un $\Delta_k<0$ si ha che le somme $\Delta_k+\ldots+\Delta_{k+N}<0$ perchè posso accoppiare ogni termine positivo col precedente che deve essere negativo. Questo significa che ogni volta che la successione si abbassa sotto un certo livello (fa un salto negativo) vi rimane sotto definitivamente. Cioè che $\Delta_k<0 \Rightarrow a_{k-1}>a_n$ con $n\ge k$. Posto $\ell:=\liminf_{n} a_n$ (\'e un numero reale perch\'e la successione \'e limitata inferiormente) e fissato $\epsilon>0$ definisco $I_{\epsilon}:=[\ell-\epsilon, \ell +\epsilon]$. Per definizione posso mettermi nella zona in cui la successione sta definitivamente sopra $\ell-\epsilon$ e frequentemente sotto $\ell +\epsilon$, preso qui un certo $a_k$ ci sono due casi, se $\Delta_k\ge0$ so che $\Delta_{k+1}<0$ dunque $a_{k+1}$ sta in $I_{\epsilon}$ e tutta la successione ci sta. Se invece $\Delta_{k}<0$ si ha che necessariamente $a_{k-1}\in I_{3\epsilon}$ (perchè sia $a_{k-1}$ che $a_{k-2}$ erano sopra $\ell-\epsilon$) dunque la successione sta definitivamente in $I_{3\epsilon}$. Per l' arbitrarietà di $\epsilon$ si conclude.
+
+\ex{3.7} Stimare fattoriali (dopo essere passati al logaritmo) e serie con gli integrali o alla peggio usate brutalmente la formula di Stirling. \\ Oppure \hide{, se siete persone malvagie,} usate Stolz-Cesaro.
+
+\ex{3.17} Mostrare che gli intervalli $I_n = [x_n, y_n]$ sono inscatolati i.e. $I_{n+1} \subseteq I_{n}$ e che l'ampiezza di tali intervalli tende a zero. (Si conclude per la \NINI).
+
+\ex{3.18} La successione è evidentemente positiva e strettamente crescente. Supponiamo sia finito $L:=\limsup_n x_n$. Scelgo $\epsilon<1/L$ e prendo (grazie alla definizione di $\limsup$) un $L-\epsilon<x_N<L$ e scrivo:
+$$ L>x_{N+1}=x_N+\frac{1}{x_N}>L-\epsilon+\frac{1}{L}$$
+Guardando primo e ultimo membro si ha un assurdo. Per valutare l' ordine di crescita interpreto $x$ come funzione di $n$ variabile reale e osservo che $\frac{dx}{dn}\equip x_{n+1}-x_n$ l' equazione ricorsiva diventa: $\frac{dx}{x}=dn$ integrando ottengo soluzioni del tipo $x_n=\sqrt{n}$. Il risultato è corretto a meno di costanti moltiplicative/additive come si può verificare per induzione.
+

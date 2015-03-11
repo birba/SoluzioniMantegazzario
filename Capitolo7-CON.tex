@@ -1,0 +1,38 @@
+\section{Continuità}
+
+\ex{7.6} Osserviamo che una formulazione equivalente è:
+$$ f\mbox{ surgettiva} \wedge \left( f(x_n)\mbox{ converge} \Rightarrow (x_n) \mbox{ converge} \right) \Rightarrow f \mbox{ continua} $$
+Intanto mostriamo che $f$ è iniettiva. Se non lo fosse avrei $f(x)=f(x'):=f$ con $x\neq x'$, prendo la successione:
+$$ x_{2n}=x\ \mbox{ e }\ x_{2n+1}=x'\ \ \Rightarrow\ f(x_n)\rightarrow f\ \  \wedge\ \ (x_n) \mbox{ non converge} $$
+Assurdo, dunque $f$ è bigettiva, considero ora la sua inversa $g$ e riscrivo il problema come:
+$$ g\mbox{ bigettiva} \wedge \left( (y_n)\mbox{ converge} \Rightarrow g(y_n) \mbox{ converge} \right) \Rightarrow f \mbox{ continua} $$
+Posto ora che $y_n\rightarrow y_{\infty}$ e che $g(y_n)\rightarrow g_{\infty}$ considero la successione:
+$$ z_{2n}=y_{\infty}\  \mbox{ e}\  z_{2n+1}=y_n\ \Rightarrow\  g(z_{2n+1})\rightarrow g_{\infty}\\ \mbox{ e}\  g(z_{2n})=g(y_{\infty}) $$
+Per ipotesi di convergenza e per unicità del limite ho: $ g_{\infty}=g(y_{\infty})$. Ma questa è la continuità di $g$. Essendo $g$ continua e bigettiva è monotòna e dunque la sua inversa, cioè $f$, è continua.
+
+\ex{7.17}Mostriamo che $f$ manda chiusi in chiusi (dunque $f^{-1}$ controporta chiusi in chiusi dunque è continua). Prendo $C$ chiuso in $X$, per compattezza di $X$ anche $C$ è compatto, dunque la sua immagine tramite $f$ è compatta (Weierstrass), ma, in spazi metrici, ogni compatto è chiuso. 
+
+\ex{7.40}Controsempio cannonoso: Fissiamo una base di Hamel di $\RR$ come spazio vettoriale su $\QQ$. Ora ogni reale $x$ si scrive come combinazione lineare {\it finita}: $x=\sum_{i=0}^{n_x} \frac{p_i}{q_i}\, b_i$. Definisco:
+$$ f:x\mapsto \frac{1}{\gcd(p_1,\ldots,p_{n_x})} $$ 
+questa $f$ è effettivamente un controesempio.\\
+Controesempio alternativo: sia $A=\{\pi,\pi^2,\ldots\}$ definisco $f$ costantemente $1$ su $A$ e nulla altrove. Fissato $\check{x}$ la sua progressione aritmetica casca al più una volta in $A$ (che si riesca anche a fare continua sulla base di questa?)...\\
+Se $f$ è uniformemente continua invece il limite di $f$ è nullo. Prendo $L=\limsup f$ e so che frequentemente c'è qualcuno (sia $x_k$) sopra $L-\epsilon$. Prendo il $\delta$ dell' uniforme continuità e ho che $f([x_k-\delta,x_k+\delta])\ge L-2\epsilon$. Scelgo ora $\check{x}<2\delta$ e applico la prima ipotesi ottenendo un assurdo perchè capito negli intorni di tutti gli $x_k$ ed ho $\limsup_n n\check{x}\ge L-2\epsilon>0$ per l' arbitrarietà di $\epsilon$.
+
+\ex{7.43} Ricordiamo che i punti di disconituità di una funzione $f:X\rightarrow \RR$ sono una $F_\sigma$ oppure che, equivalentemente, i punti di continuità sono una intesezione numerabile di aperti. Dimostriamo dunque che non si può ottenere $\QQ$ come intersezione numerabile di aperti. Per assurdo supponiamo: $\QQ=\bigcap_{n\in\NN}A_n$ essendo aperti gli $A_n$. Poniamo per ogni $k$ naturale:
+$$
+B_k:=\RR\setminus\left(\bigcap_{j=0}^{k} A_j \right)\subseteq \RR\setminus\left(\bigcap_{j=0}^{\infty} A_j \right)=\RR\setminus \QQ
+$$ 
+l' idea è che i $B_k$ possono contenere solo irrazionali ed in quantità numerabile e dunque la loro unione (numerabile) non può esaurire $\RR\setminus \QQ$. Per dimostrarlo basti osservare che $\bigcap_{j=0}^{k} A_j$ è un aperto di $\RR$ e dunque si ottiene come unione di intervalli digiunti; questi intervalli sono fra loro adiacenti perchè se non lo fossero il complementare della loro unione (cioè $B_k$) avrebbe parte interna nonvuota e quindi conterrebbe dei razionali, assurdo. Posso quindi numerare i punti di $B_k$ poichè sono in bigezione con la coppia di intervalli cui sono adiacenti. Questo prova che  $\bigcup_{k\in\NN} B_k=\RR\setminus \QQ$ è numerabile, da cui l'assurdo.
+
+\ex{7.48} Utilizziamo le notazioni del problema \rec{7.39} e i risultati provati ai punti $(3)$ e $(4)$. Sia $A$ l' insieme dei punti di discontinuità di $f$. Osserviamo che per ogni $n$ la funzione $f\vert _{A_n}$ è ancora SCI e dunque i suoi sottolivelli, definiti per ogni reale $M$ come:
+$$B_{(n,M)}:=\{x\in A_n: f(x)\leq M\}$$ 
+sono dei chiusi (si vede velocemente utilizzando la caratterizzazione sequenziale di chiusura e la SCI). Osserviamo che in particolare: 
+$$ A=\bigcup_{k\in \NN} A_k\cap B_{(k,k)}\ \mbox{ poichè }\ A_k\subseteq A_{k+1}\subseteq A\ \wedge\ B_{(k,k)}\subseteq B_{(k+1,k+1)} $$
+infatti un punto di discontinuità ha necessariamente oscillazione non nulla e immagine finita. Abbiamo scritto così $A$ come unione numerabile di chiusi, se facciamo vedere che hanno tutti parte interna vuota abbiamo finito. Supponiamo che esista $n$ naturale e $I$ intervallo aperto tale che $I\subseteq A_n\cap B_{(n,n)}$. Mostriamo ora che riusciamo a far assumere ad $f$ ristretta ad $I$ valori arbitrariamente grossi. Prendo un generico $x_0\in I$ ricordando che per le funzioni $SCI$ vale:
+$$ f(x)=\lim_{r\rightarrow 0^+} \inf_{y\in B_{r}(x)} f(y) $$ 
+ho che affinchè l' oscillazione sia $\geq 1/n$ deve esistere in ogni palla centrata in $x_0$ di centro $r_0$ un punto $x_1$ tale che:
+$$ f(x_1)\geq f(x_0)+1/2n $$
+costruisco così ricorsivamente una successione $(x_k)$, posso costruirla stando in $I$ semplicemente scegliento i raggi in maniera tale che $\sum_{i\in \NN} r_i<\epsilon$, ma chiaramente:
+$$ f(x_N)\geq f(x_0)+\frac{N}{2n} $$
+facendo tendere $N$ all' infinito ho che gli $(x_k)$ non possono stare in $B_{(n,n)}\supseteq I$. Assurdo.
+

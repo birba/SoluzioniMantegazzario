@@ -1,0 +1,29 @@
+\section{Topologia di $\RR$}
+
+\ex{5.12} Usando \rec{5.16} si ha che $\card(\mbox{aperti}) \le \card\left({\left(\RR \cart \RR\right)}^{\NN}\right) = \card(\RR)$.
+
+\ex{5.15} Controesempio alla seconda domanda: $A = \{n+\frac{1}{n} \mid n \in \NN^{*}\}$, $B = \ZZ$.
+
+\ex{5.16} $A$ aperto di $\RR$. Definiamo $\forall a \in A \quad I_a := \bigcup \{(x,y) \mid a \in (x,y) \subseteq A \}$; gli $I_a$ sono intervalli e partizionano $A$. Una famiglia di intervalli disgiunti di $\RR$ ha cardinalit\`a al pi\`u numerabile; per provarlo intersecarli con $\QQ$ oppure osservare che per ogni lunghezza positiva fissata $\ell$ ve ne sono al pi\`u una quantit\`a numerabile di lunghezza maggiore di $\ell$. A questo punto si sceglie $\ell = \frac{1}{n}$ e si numerano.
+
+\ex{5.17} Passare al complementare e usare \rec{5.16}
+
+\ex{5.18} Usare la \NINI per dire che esistono punti che non vengono coperti dai chiusi del ricoprimento. (passare al complementare ed usare la \NINI sugli aperti)
+
+\ex{5.19} Passare al complementare e usare \rec{5.20}
+
+\ex{5.20} \NINI
+
+\ex{5.21} Contarli come in \rec{5.16}
+
+\ex{5.22} Caratterizzare i chiusi come gli insiemi che contengono i loro punti di accumulazione. 
+
+\ex{5.23} Bisezionare ed ogni volta e scegliere negli intervalli creati un qualsiasi elemento (se c'è) di $F$. (si generalizza ad $\RR^{n}$)
+
+\ex{5.30} Seconda parte: supponiamo per assurdo $\card(A) > \card(\NN)$. Operiamo una bisezione su $A$ per vedere dove ci sono una quantit\`a pi\`u che numerabile di punti: ad ogni bisezione sono ad un bivio e la scelta pu\`o essere {\it libera} o {\it obbligata}. Pu\`o essere {\it libera} se da entrambi i lati ci sono una quantit\`a pi\`u che numerabile di punti. Non si possono presentare definitivamente scelte {\it obbligate}: qualunque successione di scelte {\it libere} io faccia prima o poi mi si presenter\`a un'altra scelta {\it libera} (se no in quell'intervallo avrei solo una quantit\`a numerabile di punti). Ma allora ho libert\`a $\card(\NN)$ volte di scegliere tra due possibilit\`a: almeno $\card(2^{\NN}) \equip \card(\RR)$ punti di accumulazione.\\
+Alternativa: considero i punti di $A$. Aut sono isolati (dunque hanno cardinalità al più numerabile) aut sono di accumulazione (dunque stanno in $A'$ e hanno ancora cardinalità al più numerabile). 
+
+\ex{5.31}Prima parte: consideriamo $A_0:=\{1/n:n\in\NN^{*}\}$ quest' insieme chiaramente si accumula in $0$ ed è composto da soli punti isolati. Costruiamo $A_1$ traslando e omotetizzando copie di $A_0$ in modo che si accumulino sui punti del tipo $1/n$ e che si abbia quindi $A_1'=A_0$. Ricorsivamente si riesce ad ottenere la tesi. Seconda parte: incollare nell'intervallo $[2n, 2n+1]$ la soluzione della prima parte con $n$.
+
+\ex{5.32} Sia $X$ il mio insieme. Considero un suo punto $x_o$: trovo una successione di punti di $X$ che tende a $x_o$; reitero il procedimento per ogni punto di tale successione e cos\`i via: ho trovato $\card(\NN^{\NN})$ punti.
+
