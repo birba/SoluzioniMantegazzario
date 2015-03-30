@@ -1,2 +1,52 @@
 \section{Successioni e Serie di Funzioni}
-
+\ex{8.46}{\it Teorema della mappa aperta.} Siano $X$ e $Y$ due Banach, $T:X\rightarrow Y$ mappa lineare, continua e bigettiva. Vogliamo mostrare che $T$ manda aperti in aperti. Per linearità basta mostrare che manda palle centrate nell' origine in aperti.\\
+Passo $(1)$: {\it Esiste} $c>0$ {\it tale che} $\overline{T(B_X (0,1))}\supseteq B_Y (0, 2c)$.\\
+Per surgettività si ha:
+$$
+Y=\bigcup_{k\in\NN} {\overline{T(B_X (0,k))}}
+$$
+ma $Y$ è completo, dunque, per il Lemma di Baire, almeno un elemento dell' unione ha parte interna nonvuota. Esistono dunque $r>0$, $y_o\in Y$ e $n\in\NN$ tale che:
+$$
+\overline{T(B_X (0,n))}\supseteq B_Y(y_o,r) 
+$$
+trasliamo ora questo contenimento nell' origine; posto $x_o:=T^{-1}(y_o)$ abbiamo, per ogni $y$ di norma più piccola di $r$:
+$$
+y_o+y=\lim_{k\rightarrow \infty} T(x_k)=T(x_o)+ \lim_{k\rightarrow \infty} T(x_k-x_o)
+$$
+cioè:
+$$
+y=\lim_{k\rightarrow \infty} T(x_k-x_o)\quad \Rightarrow\quad B_Y(0,r)\subseteq \overline{T(B_X(0,2n))}
+$$
+infatti $\Norm{x_k-x_o}_X\leq 2n$. Per omogeneità possiamo omotetizzare questo contenimento ottenendo la tesi con $c=r/4n$.\\
+\\
+Passo $(2)$: {\it Vale in realtà} $T(B_X(0,1))\supseteq B_Y(0,c)$.\\
+Prendiamo un generico $y\in B_Y(0,c)\subseteq \overline{T(B_X(0,1/2))}$ per definizione posso trovare $y_1=T(x_1)$ più vicino di $c/2$ ad $y$, ossia tale che valgano le seguenti:
+$$
+\Norm{y-y_1}_Y<\frac{c}{2}\quad \mbox{e}\quad \Norm{x_1}_X<\frac{1}{2}
+$$
+Ora osservo che intanto:
+$$
+B_Y(0,c/2)\subseteq \overline{T(B_X(0,1/4))}
+$$
+inoltre il vettore $(y-y_1)\in B_Y(0,c/2)$, dunque come prima trovo $y_2=T(x_2)$ tale che:
+$$
+\Norm{y-y_1-y_2}_Y<\frac{c}{4}\quad \mbox{e}\quad \Norm{x_2}_X<\frac{1}{4}
+$$
+Continuando a ragionare così trovo due successioni $(y_k)\in Y$ e $(x_k)\in X$ tali che per ogni $k$ valga $y_k=T(x_k)$ e che valgano, per ogni $m$, le due seguenti:
+$$
+\Norm{y-\sum_{i=1}^m y_{i}}_Y<\frac{c}{2^m}\quad \mbox{e}\quad \Norm{x_m}_X<\frac{1}{2^m}\qquad\qquad (\star)
+$$
+Ora osservo che la serie $\sum_{m\in\NN}\Norm{x_m}_X$ converge dunque per completezza di $X$ ho che esiste $x$ tale che:
+$$
+x=\sum_{m=1}^{\infty} x_m\qquad \mbox{inoltre} \qquad \Norm{x}_X\leq\sum_{m=1}^{\infty} \Norm{x_m}_X<1\quad \Rightarrow x\in B_X(0,1)
+$$
+inoltre la prima equazione di $(\star)$ ci dice (per definizione) che $y=\sum_{i=1}^{\infty}y_i$. Usando la continuità di $T$ abbiamo finito:
+$$
+y=\sum_{i=1}^{\infty}y_i=\sum_{i=1}^{\infty}T(x_i)=T\left(\sum_{i=1}^{\infty}x_i\right)=T(x)
+$$
+cioè $y\in T(B_X(0,1))$.\\
+Applicando alla tesi del passo $(2)$ l' operatore $T^{-1}$ e usando l'omegenità si ha:
+$$
+T^{-1}(B_Y(0,1))\subseteq B_X(0,1/c)
+$$
+Ossia $T^{-1}$ è limitato, dunque continuo.
