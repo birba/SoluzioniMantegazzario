@@ -18,12 +18,12 @@ questa $f$ è effettivamente un controesempio.\\
 Controesempio alternativo: sia $A=\{\pi,\pi^2,\ldots\}$ definisco $f$ costantemente $1$ su $A$ e nulla altrove. Fissato $\check{x}$ la sua progressione aritmetica casca al più una volta in $A$ (che si riesca anche a fare continua sulla base di questa?)...\\
 Se $f$ è uniformemente continua invece il limite di $f$ è nullo. Prendo $L=\limsup f$ e so che frequentemente c'è qualcuno (sia $x_k$) sopra $L-\epsilon$. Prendo il $\delta$ dell' uniforme continuità e ho che $f([x_k-\delta,x_k+\delta])\ge L-2\epsilon$. Scelgo ora $\check{x}<2\delta$ e applico la prima ipotesi ottenendo un assurdo perchè capito negli intorni di tutti gli $x_k$ ed ho $\limsup_n n\check{x}\ge L-2\epsilon>0$ per l' arbitrarietà di $\epsilon$.
 
-\ex{7.43} Ricordiamo che i punti di disconituità di una funzione $f:X\rightarrow \RR$ sono una $F_\sigma$ oppure che, equivalentemente, i punti di continuità sono una intesezione numerabile di aperti. Dimostriamo dunque che non si può ottenere $\QQ$ come intersezione numerabile di aperti. Per assurdo supponiamo: $\QQ=\bigcap_{n\in\NN}A_n$ essendo aperti gli $A_n$. Poniamo per ogni $k$ naturale:
-$$
-B_k:=\RR\setminus\left(\bigcap_{j=0}^{k} A_j \right)\subseteq \RR\setminus\left(\bigcap_{j=0}^{\infty} A_j \right)=\RR\setminus \QQ
-$$ 
-l' idea è che i $B_k$ possono contenere solo irrazionali ed in quantità numerabile e dunque la loro unione (numerabile) non può esaurire $\RR\setminus \QQ$. Per dimostrarlo basti osservare che $\bigcap_{j=0}^{k} A_j$ è un aperto di $\RR$ e dunque si ottiene come unione di intervalli digiunti; questi intervalli sono fra loro adiacenti perchè se non lo fossero il complementare della loro unione (cioè $B_k$) avrebbe parte interna nonvuota e quindi conterrebbe dei razionali, assurdo. Posso quindi numerare i punti di $B_k$ poichè sono in bigezione con la coppia di intervalli cui sono adiacenti. Questo prova che  $\bigcup_{k\in\NN} B_k=\RR\setminus \QQ$ è numerabile, da cui l'assurdo.
-
+%%\ex{7.43} Ricordiamo che i punti di disconituità di una funzione $f:X\rightarrow \RR$ sono una $F_\sigma$ oppure che, equivalentemente, i punti di continuità sono una intesezione numerabile di aperti. Dimostriamo dunque che non si può ottenere $\QQ$ come intersezione numerabile di aperti. Per assurdo supponiamo: $\QQ=\bigcap_{n\in\NN}A_n$ essendo aperti gli $A_n$. Poniamo per ogni $k$ naturale:
+%%$$
+%%B_k:=\RR\setminus\left(\bigcap_{j=0}^{k} A_j \right)\subseteq \RR\setminus\left(\bigcap_{j=0}^{\infty} A_j \right)=\RR\setminus \QQ
+%%$$ 
+%%l' idea è che i $B_k$ possono contenere solo irrazionali ed in quantità numerabile e dunque la loro unione (numerabile) non può esaurire $\RR\setminus \QQ$. Per dimostrarlo basti osservare che $\bigcap_{j=0}^{k} A_j$ è un aperto di $\RR$ e dunque si ottiene come unione di intervalli digiunti; questi intervalli sono fra loro adiacenti perchè se non lo fossero il complementare della loro unione (cioè $B_k$) avrebbe parte interna nonvuota e quindi conterrebbe dei razionali, assurdo. Posso quindi numerare i punti di $B_k$ poichè sono in bigezione con la coppia di intervalli cui sono adiacenti. Questo prova che  $\bigcup_{k\in\NN} B_k=\RR\setminus \QQ$ è numerabile, da cui l'assurdo.
+%%
 \ex{7.48} Utilizziamo le notazioni del problema \rec{7.39} e i risultati provati ai punti $(3)$ e $(4)$. Sia $A$ l' insieme dei punti di discontinuità di $f$. Osserviamo che per ogni $n$ la funzione $f\vert _{A_n}$ è ancora SCI e dunque i suoi sottolivelli, definiti per ogni reale $M$ come:
 $$B_{(n,M)}:=\{x\in A_n: f(x)\leq M\}$$ 
 sono dei chiusi (si vede velocemente utilizzando la caratterizzazione sequenziale di chiusura e la SCI). Osserviamo che in particolare: 
