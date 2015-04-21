@@ -37,14 +37,14 @@ $$
 \overline{E_k}\subseteq E_{n(k)}
 $$
 Questo è vero scegliendo, ad esempio, $n(k)>4k$, verifichiamolo.\\
-Sia $\overline{x}$ di accumulazione per $E_k$. Supponiamo per assurdo che $\eta(\overline{x})<1/4k$ ciò significa che in un intorno abbastanza piccolo di $\overline{x}$ (chiamiamolo $J$) la funzione dista dal suo valore in $\overline{x}$ meno di $1/2k$ (convincersene: se non fosse così $\eta(\overline{x})\geq 1/2k$).\\
+Sia $\overline{x}$ di accumulazione per $E_k$. Supponiamo per assurdo che $\eta(\overline{x})<1/4k$ ciò significa che in un intervallino abbastanza piccolo intorno a $\overline{x}$ (chiamiamolo $J$) la funzione dista dal suo valore in $\overline{x}$ meno di $1/3k$ (convincersene: se non fosse così $\eta(\overline{x})\geq 1/3k$).\\
 Sia ora $(x_j)\subseteq E_k$ successione convergente a $\overline{x}$; per ogni $j$ scelgo $y_j$ ponendo nella definizione $\delta=1/j$ dimodochè valga:
 $$
 \norm{x_j-y_j}<1/j\qquad \wedge \qquad \norm{f(x_j)-f(y_j)}\geq \eta(x_j)\geq \frac{1}{k}
 $$
 dalla prima è evidente che $y_j\rightarrow \overline{x}$ perciò, almeno definitivamente, $(x_j)$ ed $(y_j)$ stanno in $J$, dunque, per $j$ abbastanza grande vale:
 $$
-\frac{1}{k}>\frac{1}{2k}+\frac{1}{2k}\geq \norm{f(\overline{x})-f(x_j)}+\norm{f(y_j)-f(\overline{x})}\geq \norm{f(x_j)-f(y_j)}\geq \eta(x_j)\geq \frac{1}{k}
+\frac{1}{k}>\frac{1}{3k}+\frac{1}{3k}\geq \norm{f(\overline{x})-f(x_j)}+\norm{f(y_j)-f(\overline{x})}\geq \norm{f(x_j)-f(y_j)}\geq \eta(x_j)\geq \frac{1}{k}
 $$
 a questo punto abbiamo finito perchè unire gli $E_k$ equivale a unire gli $\overline{E_k}$:
 $$
