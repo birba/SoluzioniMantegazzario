@@ -17,13 +17,50 @@ $$ f:x\mapsto \frac{1}{\gcd(p_1,\ldots,p_{n_x})} $$
 questa $f$ è effettivamente un controesempio.\\
 Controesempio alternativo: sia $A=\{\pi,\pi^2,\ldots\}$ definisco $f$ costantemente $1$ su $A$ e nulla altrove. Fissato $\check{x}$ la sua progressione aritmetica casca al più una volta in $A$ (che si riesca anche a fare continua sulla base di questa?)...\\
 Se $f$ è uniformemente continua invece il limite di $f$ è nullo. Prendo $L=\limsup f$ e so che frequentemente c'è qualcuno (sia $x_k$) sopra $L-\epsilon$. Prendo il $\delta$ dell' uniforme continuità e ho che $f([x_k-\delta,x_k+\delta])\ge L-2\epsilon$. Scelgo ora $\check{x}<2\delta$ e applico la prima ipotesi ottenendo un assurdo perchè capito negli intorni di tutti gli $x_k$ ed ho $\limsup_n n\check{x}\ge L-2\epsilon>0$ per l' arbitrarietà di $\epsilon$.
-
-%%\ex{7.43} Ricordiamo che i punti di disconituità di una funzione $f:X\rightarrow \RR$ sono una $F_\sigma$ oppure che, equivalentemente, i punti di continuità sono una intesezione numerabile di aperti. Dimostriamo dunque che non si può ottenere $\QQ$ come intersezione numerabile di aperti. Per assurdo supponiamo: $\QQ=\bigcap_{n\in\NN}A_n$ essendo aperti gli $A_n$. Poniamo per ogni $k$ naturale:
-%%$$
-%%B_k:=\RR\setminus\left(\bigcap_{j=0}^{k} A_j \right)\subseteq \RR\setminus\left(\bigcap_{j=0}^{\infty} A_j \right)=\RR\setminus \QQ
-%%$$ 
-%%l' idea è che i $B_k$ possono contenere solo irrazionali ed in quantità numerabile e dunque la loro unione (numerabile) non può esaurire $\RR\setminus \QQ$. Per dimostrarlo basti osservare che $\bigcap_{j=0}^{k} A_j$ è un aperto di $\RR$ e dunque si ottiene come unione di intervalli digiunti; questi intervalli sono fra loro adiacenti perchè se non lo fossero il complementare della loro unione (cioè $B_k$) avrebbe parte interna nonvuota e quindi conterrebbe dei razionali, assurdo. Posso quindi numerare i punti di $B_k$ poichè sono in bigezione con la coppia di intervalli cui sono adiacenti. Questo prova che  $\bigcup_{k\in\NN} B_k=\RR\setminus \QQ$ è numerabile, da cui l'assurdo.
-%%
+\ex{7.42} Negando formalmente la continuità in un punto otteniamo la seguente caratterizzazione dei punti di $D(f)$:
+$$
+x\in D(f)\ \Leftrightarrow\  \exists \epsilon(x)>0\  \forall \delta>0\  \exists x_\delta \mbox{ t.c. } \norm{x_\delta-x}<\delta\  \wedge\   \norm{f(x_\delta)-f(x)}\geq \epsilon(x)\ \ (\star)
+$$
+è chiaro che se un certo $\epsilon(x)$ verifica $(\star)$ allora la verificano anche quelli più piccoli; per non avere ambiguità scegliamo, per ogni $x$, il $\sup$ degli $\epsilon$ che verificano la condizione $(\star)$. In simboli: definiamo una funzione:
+$$
+\eta: D(f)\rightarrow (0,+\infty)
+$$
+$$
+\eta: x\mapsto \sup\{\epsilon(x)\ \vert\ \epsilon(x) \mbox{ soddisfa } (\star) \}
+$$
+Ora definiamo, per ogni $k$ positivo, i seguenti insiemi:
+$$
+E_k:=\{x\in D(f)\ \vert\  \eta(x)\geq 1/k \}
+$$
+risulta chiaro che $D(f)=\bigcup_{k\in\NN^{*}} E_k$, vorremo che tali insiemi siano chiusi; in generale non lo sono, ma mostriamo che per ogni $k$ esiste un $n(k)$ tale che:
+$$
+\overline{E_k}\subseteq E_{n(k)}
+$$
+Questo è vero scegliendo, ad esempio, $n(k)>4k$, verifichiamolo.\\
+Sia $\overline{x}$ di accumulazione per $E_k$. Supponiamo per assurdo che $\eta(\overline{x})<1/4k$ ciò significa che in un intorno abbastanza piccolo di $\overline{x}$ (chiamiamolo $J$) la funzione dista dal suo valore in $\overline{x}$ meno di $1/2k$ (convincersene: se non fosse così $\eta(\overline{x})\geq 1/2k$).\\
+Sia ora $(x_j)\subseteq E_k$ successione convergente a $\overline{x}$; per ogni $j$ scelgo $y_j$ ponendo nella definizione $\delta=1/j$ dimodochè valga:
+$$
+\norm{x_j-y_j}<1/j\qquad \wedge \qquad \norm{f(x_j)-f(y_j)}\geq \eta(x_j)\geq \frac{1}{k}
+$$
+dalla prima è evidente che $y_j\rightarrow \overline{x}$ perciò, almeno definitivamente, $(x_j)$ ed $(y_j)$ stanno in $J$, dunque, per $j$ abbastanza grande vale:
+$$
+\frac{1}{k}>\frac{1}{2k}+\frac{1}{2k}\geq \norm{f(\overline{x})-f(x_j)}+\norm{f(y_j)-f(\overline{x})}\geq \norm{f(x_j)-f(y_j)}\geq \eta(x_j)\geq \frac{1}{k}
+$$
+a questo punto abbiamo finito perchè unire gli $E_k$ equivale a unire gli $\overline{E_k}$:
+$$
+D(f)=\bigcup_{k\in\NN^{*}} E_k=\bigcup_{k\in\NN^{*}} \overline{E_k}
+$$
+\ex{7.43} Supponiamo che una tale funzione esista;  ricordando che i punti di discontinuità di una funzione sono una $F_\sigma$ avremmo che gli irrazionali si scrivono come unione numerabile di chiusi:
+$$
+\RR \setminus \QQ=\bigcup_{n\in\NN} C_n
+$$
+è evidente che questi $C_n$ non contengono razionali, dunque non hanno parte interna. Ma evidentemente anche i razionali si scrivono come unione numerabiole di chiusi a parte interna vuota, basta numerarli e scrivere:
+$$
+\QQ=\bigcup_{k\in\NN} \{q_k\}
+$$
+ma allora avremmo che:
+$$\RR=\bigcup_{n\in\NN} C_n \cup \bigcup_{k\in\NN} \{q_k\}$$
+che è evidentemete assurdo per il lemma di Baire.
 \ex{7.48} Utilizziamo le notazioni del problema \rec{7.39} e i risultati provati ai punti $(3)$ e $(4)$. Sia $A$ l' insieme dei punti di discontinuità di $f$. Osserviamo che per ogni $n$ la funzione $f\vert _{A_n}$ è ancora SCI e dunque i suoi sottolivelli, definiti per ogni reale $M$ come:
 $$B_{(n,M)}:=\{x\in A_n: f(x)\leq M\}$$ 
 sono dei chiusi (si vede velocemente utilizzando la caratterizzazione sequenziale di chiusura e la SCI). Osserviamo che in particolare: 
