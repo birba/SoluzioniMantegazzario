@@ -46,7 +46,7 @@ dalla prima è evidente che $y_j\rightarrow \overline{x}$ perciò, almeno defini
 $$
 \frac{1}{k}>\frac{1}{3k}+\frac{1}{3k}\geq \norm{f(\overline{x})-f(x_j)}+\norm{f(y_j)-f(\overline{x})}\geq \norm{f(x_j)-f(y_j)}\geq \eta(x_j)\geq \frac{1}{k}
 $$
-a questo punto abbiamo finito perchè unire gli $E_k$ equivale a unire gli $\overline{E_k}$:
+che è assurdo. A questo punto abbiamo finito perchè unire gli $E_k$ equivale a unire gli $\overline{E_k}$:
 $$
 D(f)=\bigcup_{k\in\NN^{*}} E_k=\bigcup_{k\in\NN^{*}} \overline{E_k}
 $$
@@ -60,16 +60,17 @@ $$
 $$
 ma allora avremmo che:
 $$\RR=\bigcup_{n\in\NN} C_n \cup \bigcup_{k\in\NN} \{q_k\}$$
-che è evidentemete assurdo per il lemma di Baire.
+che è assurdo per il lemma di Baire.
 \ex{7.48} Utilizziamo le notazioni del problema \rec{7.39} e i risultati provati ai punti $(3)$ e $(4)$. Sia $A$ l' insieme dei punti di discontinuità di $f$. Osserviamo che per ogni $n$ la funzione $f\vert _{A_n}$ è ancora SCI e dunque i suoi sottolivelli, definiti per ogni reale $M$ come:
 $$B_{(n,M)}:=\{x\in A_n: f(x)\leq M\}$$ 
 sono dei chiusi (si vede velocemente utilizzando la caratterizzazione sequenziale di chiusura e la SCI). Osserviamo che in particolare: 
 $$ A=\bigcup_{k\in \NN} A_k\cap B_{(k,k)}\ \mbox{ poichè }\ A_k\subseteq A_{k+1}\subseteq A\ \wedge\ B_{(k,k)}\subseteq B_{(k+1,k+1)} $$
-infatti un punto di discontinuità ha necessariamente oscillazione non nulla e immagine finita. Abbiamo scritto così $A$ come unione numerabile di chiusi, se facciamo vedere che hanno tutti parte interna vuota abbiamo finito. Supponiamo che esista $n$ naturale e $I$ intervallo aperto tale che $I\subseteq A_n\cap B_{(n,n)}$. Mostriamo ora che riusciamo a far assumere ad $f$ ristretta ad $I$ valori arbitrariamente grossi. Prendo un generico $x_0\in I$ ricordando che per le funzioni $SCI$ vale:
+infatti un punto di discontinuità ha necessariamente oscillazione non nulla e immagine finita. Abbiamo scritto così $A$ come unione numerabile di chiusi, se facciamo vedere che hanno tutti parte interna vuota abbiamo finito. Supponiamo che esista $n$ naturale e $I$ intervallo aperto tale che $I\subseteq A_n\cap B_{(n,n)}$. Mostriamo ora che riusciamo a far assumere ad $f$ ristretta ad $I$ valori arbitrariamente grossi. Prendo un generico $x_0\in I$ ricordando che per le funzioni SCI vale:
 $$ f(x)=\lim_{r\rightarrow 0^+} \inf_{y\in B_{r}(x)} f(y) $$ 
 ho che affinchè l' oscillazione sia $\geq 1/n$ deve esistere in ogni palla centrata in $x_0$ di centro $r_0$ un punto $x_1$ tale che:
 $$ f(x_1)\geq f(x_0)+1/2n $$
 costruisco così ricorsivamente una successione $(x_k)$, posso costruirla stando in $I$ semplicemente scegliento i raggi in maniera tale che $\sum_{i\in \NN} r_i<\epsilon$, ma chiaramente:
 $$ f(x_N)\geq f(x_0)+\frac{N}{2n} $$
 facendo tendere $N$ all' infinito ho che gli $(x_k)$ non possono stare in $B_{(n,n)}\supseteq I$. Assurdo.
+\ex{7.63} Consideriamo $f_\epsilon(x):=f(x)+\epsilon x$ in modo che la monotonia locale sia stretta. Se supponessimo per assurdo che $f_\epsilon$ non sia monotona, avremmo che non è iniettiva (per continuità) e dunque ha un massimo locale in $(a,b)$, ma questo è assurdo perchè nessun punto interno può essere di massimo locale (ha alla sua destra punti in cui la funzione ha un valore strettamente maggiore). Dunque le $f_\epsilon$ sono monotone, passando al limite per $\epsilon\rightarrow 0$ tale proprietà si preserva.
 
