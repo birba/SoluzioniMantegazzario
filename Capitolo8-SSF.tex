@@ -1,4 +1,31 @@
 \section{Successioni e Serie di Funzioni}
+\ex{8.15} Sia $(X,d)$ uno spazio metrico completo, $(Y, \delta)$ uno spazio metrico qualsiasi, e 
+$f= \lim_{n \to infty} f_n$ una funzione da $X$ in $Y$ limite puntuale di funzioni. Allora le discontinuità di $f$ sono 
+un unione numerabile di chiusi a parte interna vuota.
+\textbf{Caratterizzazione delle discontinuità}. Intuitivamente $f$ è discontinua in $x$ se le $x$ vicine 'tardano ad arrivare' al loro valore limite. Formalmente, negando la convergenza uniforme in ogni palletta di raggio $1/n$ centrata in $x$ si può dimostrare che $x \in \mathrm{disc}(f)$ sse esiste un $\varepsilon(x) > 0$ e una successione $x_n \rightarrow x$ tale che $\delta( f_n(x_n), f(x_n) ) \ge \epsilon$ per ogni $n \in \mathbb{N}$. Via perciò con l'esaustione: detto $E_k := \{x \in \mathrm{disc}(f): \varepsilon(x) \ge 1/k\}$, abbiamo 
+$$ \mathrm{disc}(f) = \bigcup_{k \in \mathbb{N}} E_k $$
+Se gli $E_k$ fossero chiusi e a parte interna vuota, allora $\mathrm{open} (\mathrm{disc}(f)) = \emptyset$ , 
+da cui $\mathrm{close}( \mathrm{disc}(f)^{c} ) = \emptyset^c = X$, ossia $f$ sarebbe continua su un denso.
+
+\textbf{$E_k$ è chiuso.} 
+Se $x_n \rightarrow x$, $x_n \in E_k$, allora esiste $\forall n$ una successione \newline 
+$(z^n_m )_{m \in \mathbb{N}} \rightarrow x_n$ tale che $\delta(f(z^n_m), f_m(z^n_m) ) \ge 1/k$. \newline
+Ma allora $(z^n_n) \rightarrow x$ e $\delta(f(z^n_n), f_n(z^n_n) ) \ge 1/k$. \newline
+
+\textbf{$E_k$ è a parte interna vuota.} 
+Supponiamo esista un aperto $B_{\varepsilon}(x_0) \subseteq E_k$. In particolare c'è anche la palla chiusa $ J := \mathrm{close}(B_{\varepsilon/2}(x_0) ) $, che è anche completa perchè sottospazio chiuso di $X$ completo. \newline 
+Per ogni $x \in J$, sia $r(x) := \min \{r \in \mathbb{N}: \forall m,n \ge r \ \ \delta(f_m(x), f_n(x) ) \le 1/2k\} $. Esiste perchè $(f_n(x))$ è convergente, perciò di Cauchy. \newline
+Siano adesso $C_s = \{x \in J: r(x) \le s\}$ per ogni $s \in \mathbb{N} $. \newline
+In pratica stiamo esaurendo i punti di $J$ in base a 'quanto ci mettono' per arrivare abbastanza vicini al loro valore limite. Dimostriamo che i $C_s$ sono chiusi. Sia $(x_i) \rightarrow x $ una successione in $C_s$. Allora, per ogni $m,n \ge s $ abbiamo 
+$$ \delta( f_m(x_i), f_n(x_i) ) \ge 1/2k $$
+da cui passando al limite in $i$ si ha $\delta( f_m(x), f_n(x) ) \ge 1/2k $ per ogni $m,n \ge s$, e dunque $r(x) \le s \ \Rightarrow x \in C_s$. Visto che
+$$\bigcup_{s \in \mathbb{N}} C_s = J, \ J \text{ completo} $$
+per il lemma di Baire esiste $r\in \mathbb{N}$ tale che $C_r$ contiene una palletta aperta $B_{\rho}(y)$. Eh, ma adesso in $B_{\rho}$ si sta vicini al valore limite, e in $E_k$ c'è qualcuno che sta lontano! Formalmente, abbiamo
+$$ (1) \ \ y \in J \subseteq E_k \ \Rightarrow \exists (z_n) \rightarrow y: \delta( f_n(z_n), f(z_n) ) \ge 1/k  $$
+$$ (2) \ \ \text{definitivamente } z_n \in B_{\rho}(y) \subseteq C_r \Rightarrow \forall i,j \ge r  \ \ \ \delta( f_i(z_n), f_j(z_n) ) \le 1/2k $$
+ma per $n \ge r$, usando la (2) con $i=n$, $j \to \infty$ otteniamo \newline $\delta( f_n(z_n), f(z_n) ) \le 1/2k$, in contraddizione con la (1).
+\newline
+\textbf{$E_k$ è a parte interna vuota.} 
 \ex{8.46}{\it Teorema della mappa aperta.} Siano $X$ e $Y$ due Banach, $T:X\rightarrow Y$ mappa lineare, continua e bigettiva. Vogliamo mostrare che $T$ manda aperti in aperti. Per linearità basta mostrare che manda palle centrate nell' origine in aperti.\\
 Passo $(1)$: {\it Esiste} $c>0$ {\it tale che} $\overline{T(B_X (0,1))}\supseteq B_Y (0, 2c)$.\\
 Per surgettività si ha:
