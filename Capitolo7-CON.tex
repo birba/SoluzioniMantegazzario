@@ -12,6 +12,27 @@ Per ipotesi di convergenza e per unicità del limite ho: $ g_{\infty}=g(y_{\inft
 
 \ex{7.17}Mostriamo che $f$ manda chiusi in chiusi (dunque $f^{-1}$ controporta chiusi in chiusi dunque è continua). Prendo $C$ chiuso in $X$, per compattezza di $X$ anche $C$ è compatto, dunque la sua immagine tramite $f$ è compatta (Weierstrass), ma, in spazi metrici, ogni compatto è chiuso. 
 
+\ex{7.21} Mostriamo che se $f$ è continua ed ha la proprietà richiesta allora è costante.\\
+Sia $A$ l' insieme dei punti su cui $f$ è localmente costante:
+$$
+A=\{x\in\RR \vert\ \exists\  r(x)>0\ \ \mbox{ t.c. } y\in(x-r,x+r)\ \Rightarrow  \ f(y)=f(x)\}
+$$ 
+è facile vedere che $A$ è aperto. Dunque se consideriamo l' insieme $R:=\RR\setminus A$ otteniamo un sottoinsieme chiuso di $\RR$, che dunque è completo; prendiamo poi la restrizione di $f$ a $R$ e chiamiamola $g:=f\vert_R$: è chiaro che tutti i punti di $R$ sono o di massimo o di minimo per $g$.\\
+Supponiamo per assurdo che $R\neq \emptyset$. Consideriamo i sopralivelli di $g$:
+$$
+C_n:=\{x\in R\ \vert\ g(x)\geq -n\}\qquad \qquad \forall\ n\in \NN 
+$$ 
+Se mostriamo che hanno tutti parte interna vuota abbiamo trovato un assurdo, perchè, essendo chiaramente la loro unione un ricoprimento numerabile di $R$, possiamo applicare il Lemma di Baire ($R$ è completo).\\
+Di nuovo per assurdo supponiamo che esista $m$ tale che $C_m$ ha parte interna non vuota; possiamo quindi prendere un intervallo $(a,b)\subseteq C_m\subseteq R$. Poichè su $R$ la $g$ non è localmente costante esistono due punti nel mio intervallo dove la $g$ assume due valori distinti: siano $f(x_1)$ ed $f(x_2)$ e sia $\overline{y}$ la loro media aritmetica. Consideriamo i due insiemi:
+$$
+S^+:=\{x\in (a,b) \ \vert\ \exists\  r(x)>0\ \ \mbox{ t.c. } z\in(x-r,x+r)\ \Rightarrow g(z)\geq \overline{y} \ \}\supseteq \{g> \overline{y}\}\neq \emptyset
+$$
+$$
+S^-:=\{x\in (a,b) \ \vert\ \exists\  r(x)>0\ \ \mbox{ t.c. } z\in(x-r,x+r)\ \Rightarrow g(z)\leq \overline{y} \ \}\supseteq \{g< \overline{y}\}\neq\emptyset
+$$
+Per prima cosa osserviamo che sono entrambi aperti (immediato dalla loro definizione), per seconda cosa notiamo che la loro intersezione è vuota: se ci fosse $\overline{x}\in S^+\cap S^-$ avrei che $g$ sarebbe localmente costante in $\overline{x}$ che dunque apparterrebbe ad $A$, assurdo.\\
+Questo dimostra che $(a,b)$ ha elementi che non stanno nè in $S^+$ nè in $S^-$ altrimenti violerei il fatto che è connesso. Esiste allora $m\in(a,b)\setminus(S^+\cup S^-)$, ciò significa intanto che $g(m)=\overline{y}$ e inoltre che $m$ è di accumulazione per punti sia strettamente più grandi di $\overline{y}$ che strettamente più piccoli; ma questo è assurdo perchè $m$, come tutti i punti di $R$, deve essere estremante locale.\\
+Da ciò deduciamo che l' assurdo era stato supporre $R$ nonvuoto, dunque ricaviamo: $\RR=A$. Ma per la connessione di $\RR$ una funzione localmente costante su un insieme connesso (in questo caso tutto $\RR$) è globalmente costante.
 \ex{7.40}Controsempio cannonoso: Fissiamo una base di Hamel di $\RR$ come spazio vettoriale su $\QQ$. Ora ogni reale $x$ si scrive come combinazione lineare {\it finita}: $x=\sum_{i=0}^{n_x} \frac{p_i}{q_i}\, b_i$. Definisco:
 $$ f:x\mapsto \frac{1}{\gcd(p_1,\ldots,p_{n_x})} $$ 
 questa $f$ è effettivamente un controesempio.\\
@@ -19,20 +40,20 @@ Controesempio alternativo: sia $A=\{\pi,\pi^2,\ldots\}$ definisco $f$ costanteme
 Se $f$ è uniformemente continua invece il limite di $f$ è nullo. Prendo $L=\limsup f$ e so che frequentemente c'è qualcuno (sia $x_k$) sopra $L-\epsilon$. Prendo il $\delta$ dell' uniforme continuità e ho che $f([x_k-\delta,x_k+\delta])\ge L-2\epsilon$. Scelgo ora $\check{x}<2\delta$ e applico la prima ipotesi ottenendo un assurdo perchè capito negli intorni di tutti gli $x_k$ ed ho $\limsup_n n\check{x}\ge L-2\epsilon>0$ per l' arbitrarietà di $\epsilon$.
 \ex{7.42} Negando formalmente la continuità in un punto otteniamo la seguente caratterizzazione dei punti di $D(f)$:
 $$
-x\in D(f)\ \Leftrightarrow\  \exists \epsilon(x)>0\  \forall \delta>0\  \exists x_\delta \mbox{ t.c. } \norm{x_\delta-x}<\delta\  \wedge\   \norm{f(x_\delta)-f(x)}\geq \epsilon(x)\ \ (\star)
+x\in D(f)\ \Leftrightarrow\  \exists \epsilon(x)>0\  \forall \delta>0\  \exists x_\delta \mbox{ t.c. } \norm{x_\delta-x}<\delta\  \wedge\   \norm{f(x_\delta)-f(x)}\geq \epsilon(x)\ \ [\star]
 $$
-è chiaro che se un certo $\epsilon(x)$ verifica $(\star)$ allora la verificano anche quelli più piccoli; per non avere ambiguità scegliamo, per ogni $x$, il $\sup$ degli $\epsilon$ che verificano la condizione $(\star)$. In simboli: definiamo una funzione:
+è chiaro che se un certo $\epsilon(x)$ verifica $[\star]$ allora la verificano anche quelli più piccoli; per non avere ambiguità scegliamo, per ogni $x$, il $\sup$ degli $\epsilon$ che verificano la condizione $[\star]$. In simboli: definiamo una funzione:
 $$
 \eta: D(f)\rightarrow (0,+\infty)
 $$
 $$
-\eta: x\mapsto \sup\{\epsilon(x)\ \vert\ \epsilon(x) \mbox{ soddisfa } (\star) \}
+\eta: x\mapsto \sup\{\epsilon(x)\ \vert\ \epsilon(x) \mbox{ soddisfa } [\star] \}
 $$
 Ora definiamo, per ogni $k$ positivo, i seguenti insiemi:
 $$
 E_k:=\{x\in D(f)\ \vert\  \eta(x)\geq 1/k \}
 $$
-risulta chiaro che $D(f)=\bigcup_{k\in\NN^{*}} E_k$, vorremo che tali insiemi siano chiusi; in generale non lo sono, ma mostriamo che per ogni $k$ esiste un $n(k)$ tale che:
+risulta chiaro che $D(f)=\bigcup_{k\in\NN^{*}} E_k$; vorremo che tali insiemi fossero chiusi; in generale non lo sono, ma mostriamo che per ogni $k$ esiste un $n(k)$ tale che:
 $$
 \overline{E_k}\subseteq E_{n(k)}
 $$
