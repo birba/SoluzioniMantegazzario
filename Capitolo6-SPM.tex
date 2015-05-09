@@ -12,6 +12,23 @@
 \[ d(x_{\infty},x_n) \le d\left({x_{\infty}, x_{k(m)}}\right) + d\left({x_{k(m)},x_n}\right) \]
 che è infinitesimo per la convergenza di \( \left({x_{k(n)}}\right)\) e il fatto che la successione sia di Cauchy ( \(k(m)\) è un naturale \(\ge n\) ).
 
+
+\ex{6.24} Se $(X,d)$ è compatto allora anche $(\mathcal K(X),\delta)$ è compatto.
+
+Data una successione $\langle K_i | i\in \mathbb N\rangle$ di compatti, voglio trovare una sottosuccessione convergente. Sia $\mathcal U$ un ultrafiltro non principale su $\mathbb N$. Definisco $K_\infty:=\{x\in X : \forall$ intorno $U$ di $x$ vale $\{i : K_i\cap U\not=\emptyset\}\in\mathcal U\}$. \'E semplice vedere che $K_\infty$ è un sottoinsieme chiuso di $X$, e quindi appartiene a $\mathcal K(X)$. Definisco ricorsivamente la sottosuccessione di compatti in questo modo: fisso $n$.
+
+Dato che $K_\infty$ è compatto, per totale limitatezza degli spazi metrici compatti esiste un ricoprimento finito di $K_\infty$ con palle aperte di raggio $\frac{1}{2n}$: per ogni palla $P$ tra queste considero l'insieme degli indici $\{i : K(X)\cap P\not=\emptyset\}\in\mathcal U$: per proprietà di filtro, detta $A$ l'intersezione di questa famiglia finita di insiemi, $A\in\mathcal U$.
+
+Considero ora l'insieme dei punti lontani almeno $\frac{1}{n}$ da $K_\infty$, ovvero $L_\frac{1}{n}:=\{x\in X : d(x,y)\ge\frac{1}{n}\forall y\in X_\infty\}$: è facile accorgersi che questo è un chiuso (dunque è compatto); per definizione di $K_\infty$ e per proprietà di ultrafiltro vale $\forall x\in L_\frac{1}{n}\exists B(x,r_x)$ ($B$ palla aperta di centro $x$ e raggio $r_x\le\frac{1}{n}$) tale che $I_x:=\{i : K_i\cap B(x,r_x)=\emptyset\}\in\mathcal U$. Essendo $B(x,r_x)$ un ricoprimento del compatto $L_\frac{1}{n}$, ammette in sottoricoprimento finito: considero l'intersezione $B$ della famiglia finita degli insiemi $I_x$ relativi alle palle del ricoprimento finito: per proprietà di filtro $B\in\mathcal U$.
+
+Definisco per ricorsione $j(n)$ (l'indice dell'$n$-esimo elemento della sottosuccessione) come il minimo dell'insieme $(A\cap B)\setminus \{j(1),...,j(n-1)\}$: essendo $A$, $B$ e $\mathbb N\setminus\{j(1),...,j(n-1)\}\in\mathcal U$ (perchè l'ultrafiltro non è principale), l'insieme di cui voglio prendere il minimo $\in\mathcal U$, quindi in particolare è non vuoto. Inoltre $\delta(K_{j(n)},K_\infty)\le\frac{1}{n}$: infatti
+\begin{itemize}
+ \item dato che $j(n)\in A$, ogni punto di $K_\infty$ sta in una palla di raggio $\frac{1}{2n}$ che contiene almeno un punto di $K_{j(n)}$, quindi ogni punto di $K_\infty$ dista meno di $\frac{1}{n}$ da $K_{j(n)}$;
+ \item dato che $j(n)\in B$, $K_{j(n)}\cap L_\frac{1}{n}=\emptyset$ quindi ogni punto di $K_{j(n)}$ dista al più $\frac{1}{n}$ da $K_\infty$.
+\end{itemize}
+Quindi la successione $K_{j(n)}$ tende a $K_\infty$ e la tesi è dimostrata.
+
+
 \ex{6.27} Supponiamo che, nelle ipotesi date, $K$ non sia connesso. Allora $K$ si spezza nell' unione di due aperti disgiunti $A_1$ e $A_2$. Osservo che definitivamente si deve avere $K_n \cap A_1 \neq \emptyset$ e $K_n \cap A_2 \neq \emptyset$ altrimenti frequentemente $\delta (K_n, K)>r$ dove $r$ è il raggio (fissato) di una palla centrata in un certo $k\in K$ tale che $B_r(k)\subseteq A_1$ (usiamo il fatto che se esiste una palla di raggio $r$ centrata in $k\in K$ che è sempre disgiunta da $K_n$ allora $\delta(K,K_n)\geq r$). A questo punto esiste una successione di $x_n$ tali che $x_n\in K_n\setminus (A_1 \cup A_2)\subseteq (A_1 \cup A_2)^c$. Questa successione per il \rec{6.22} converge ad un elemento $x_{\infty}\in K$; ma $(A_1 \cup A_2)^c$ è chiuso e quindi contiene i limiti delle proprie successioni, assurdo.
 
 \ex{6.37} "Solo se". Supponiamo vera l' identità del parallelogramma. L' unica definizione sensata a posteriori è:
