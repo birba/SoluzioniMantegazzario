@@ -1,7 +1,8 @@
-#Makefile per la compilazione del documento LaTeX
+# Makefile per la compilazione del progetto LaTeX
 
-.PHONY: pdf compile clean
-compile: pdf dvi ps
+
+.PHONY: pdf dvi ps compile clean
+compile: pdf
 	make clean
 
 ps: dvi
@@ -13,7 +14,7 @@ dvi:
 pdf:
 	pdflatex --shell-escape SoluzioniMantegazzario.tex
 
-clean: 
+clean:
 	rm -f *.aux *.log
 
-
+# Fine del Makefile
