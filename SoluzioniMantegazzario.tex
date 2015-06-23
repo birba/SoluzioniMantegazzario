@@ -37,6 +37,22 @@ Andrea Marino, Gianluca Tasinato, Marco Costa}
 	}%
 }%
 
+\NewDocumentCommand{\de}{gg}{
+	\IfNoValueTF{#1}
+		{\mbox{ d}}
+		{\IfNoValueTF{#2} {\mbox{ d}#1}
+	{\frac{\mbox{d}#1}{\mbox{d}#2}}
+	}
+}
+
+\NewDocumentCommand{\dpar}{gg}{
+	\IfNoValueTF{#1}
+		{\partial}
+			{\IfNoValueTF{#2} {\partial_{#1}}
+		{\frac{\partial {#1}}{\partial {#2}}}
+	}
+}
+
 \newcommand{\su}[2]{\sfrac{#1}{#2}}
 \newcommand{\PP}{\mathbb{P}}
 \newcommand{\QQ}{\mathbb{Q}}
