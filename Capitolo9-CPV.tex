@@ -1,3 +1,90 @@
 \section{Calcolo Differenziali in più Variabili}
 
-\ex{3} Scierzo
+\ex{9.1} Prima parte: segue dalla definizione di differenziale in {\bf 0} che
+\[ \de{f}_0( x,y) = bx+cy \]
+Seconda parte: per ipotesi $f(x,y) = o(\sqrt{x^2+y^2} )$, perciò per la parte precedente $\de{f}_0(x,y) = 0$.
+
+\ex{9.4} Prima parte: derivando in $t$ il vincolo $\sum \gamma_i(t)^2 =1$ si ottiene $\sum \gamma_i(t) \gamma_i'(t) = 0$, che è la scrittura in base della tesi. \newline
+Seconda parte: derivando in $x_j$ il vincolo $\sum f_i^2(x_1, \ldots, x_n) = 1$ si ottiene $\sum f_i \dpar{f_i}{x_j} = 0$. D'altronde, scrivendo in base il prodotto scalare:
+$$ \langle f(x), \de{f}_x(v) \rangle  = \left ( \begin{array}{ccc} f_1(x) & \cdots & f_n(x) \end{array} \right ) \left( \begin{array}{ccc} \dpar{f_1}{x_1} & \cdots & \dpar{f_1}{x_n} \\ \vdots & \ddots & \vdots \\ \dpar{f_n}{x_1} & \cdots & \dpar{f_n}{x_n} \end{array} \right)  \left ( \begin{array}{c} v_1 \\ \vdots \\ v_n \end{array} \right ) = $$
+$$ = \left ( \begin{array}{ccc} 0 & \cdots & 0 \end{array} \right ) \left ( \begin{array}{c} v_1 \\ \vdots \\ v_n \end{array} \right ) $$
+per quanto detto sopra.
+
+\ex{9.5} Prima parte: consideriamo la mappa $t \mapsto (\cos t, \sin t)$ da $[0,2 \pi]$ in $\mathbb{R}^2$. Notiamo che $ f(2 \pi ) - f(0) = 0$, mentre $\Vert f'(\xi) \Vert = 1$ per ogni $\xi \in [0, 2 \pi ]$, perciò non esiste un punto 'alla lagrange'. \newline
+Seconda parte: consideriamo $\varphi : t \mapsto \langle f(t) - f(a), f(b) - f(a) \rangle $ che va da $[a,b]$ in $\mathbb{R}$ (continua e differenziabile, perchè?). Per Lagrange vero esiste $\xi \in (a,b)$ tale che 
+$$ \Vert f(b) - f(a) \Vert ^2 = \varphi(b) - \varphi(a) = \vert b-a \vert \varphi'(\xi) = $$
+$$ = \vert b-a \vert \langle f'(\xi), f(b) - f(a) \rangle \le \vert b-a \vert \Vert f'(\xi) \Vert \Vert f(b) - f(a) \Vert $$
+da cui la tesi. Abbiamo usato la linearità del prodotto scalare (fissata un'entrata) e della derivazione; l'ultimo passaggio è Cauchy-Schwarz.
+
+\ex{9.6} Sia $v = f(b) - f(a) \in \mathbb{R}^2$, e sia $w$  nell'ortogonale di $v$. Consideriamo $\varphi: [a,b] \rightarrow \mathbb{R} $ continua e differenziabile in $(a,b)$ tale che $\varphi(t) = \langle f(t) - f(a), w \rangle$. Visto che $\varphi(a) = \varphi(b) = 0$, per Rolle esiste un punto $\xi \in (a,b) $ t.c. $  \langle f'(\xi), w \rangle = 0$. Ma allora $f'(\xi) = \lambda v$, perchè non ha componenti lungo $w$ e $v,w$ sono una base di $\mathbb{R}^2$. \newline
+Per il caso in più dimensioni, basta considerare $f: [0,2 \pi] \rightarrow \mathbb{R}^3$ che manda $t$ in $(t,\sin t, \cos t) $.
+
+\ex{9.7} Considerare $ \gamma: t \mapsto (\cos t, \sin t, 0, \ldots, 0)$  tra 0 e $2 \pi$ : la norma della derivata è costantemente 1, dunque non si annulla mai.
+
+\ex{9.8} Sia $\gamma: [0,1] \to \mathbb{R}^n$ il segmento tra $x,y$, i.e. $\gamma(t) = y + t(x-y)$. La funzione $f \circ \gamma$ è continua e derivabile in (0,1), perciò esiste $c \in (0,1)$ tale che
+$$ f(x) - f(y) = f(\gamma(1) ) - f(\gamma(0) ) = (f \circ \gamma)' (c) = \langle \nabla f ( \gamma(c) ) , \gamma'(c) \rangle  = \langle \nabla f ( \xi ) , x-y \rangle $$
+Usando $\gamma' \equiv x-y$ e sostituendo $\xi = \gamma(c) \in [x,y]$. Per il secondo punto use Schwarz.
+
+\ex{9.9} Qui si usano entrambi i trucchi di 9.5 e 9.8: comporre dentro con una curva per rendere il dominio $\mathbb{R}$; fare un prodotto scalare dopo per rendere il codominio $\mathbb{R}$. Sia $\gamma: [0,1] \rightarrow \mathbb{R}^n$, $\gamma(t) = y +t(x-y)$. Definiamo $\varphi(t) = \langle f(\gamma (t) ) - f(y) , f(x) - f(y) \rangle $ continua e differenziabile in $(0,1)$. Per Lagrange esiste $ c \in (0,1)$ tale che 
+$$ \Vert f(x) - f(y) \Vert^2 = \varphi(1) - \varphi(0) = \langle df [\gamma(c)](\gamma'(c)  ), f(x) - f(y) \rangle \le $$ 
+$$ \le \Vert df[\xi](x-y) \Vert \Vert f(x) - f(y) \Vert \le \Vert df[\xi] \Vert_2 \Vert x-y \Vert \Vert f(x) - f(y) \Vert $$ 
+da cui la tesi (abbiamo posto $\xi =\gamma(c) \in [x,y]$) .  
+
+\ex{9.11} Siano $y = x_0 , x_1, \ldots, x_{n-1}, x_n = x$ punti in $\mathbb{R}^n$ tali che $\gamma$ coincida con l'unione dei tratti $ [x_{j-1}, x_j ]$ (non siamo interessati alla parametrizzazione della curva, ma solo al suo supporto). Allora, usando il 9.8, per certi $\xi_j \in [x_{j-1}, x_j]$, $j=1, \ldots, n$ si ha:
+$$ \vert f(x) - f(y) \vert \le \sum_{j=1}^n \vert f(x_j) - f(x_{j-1}) \vert  = \sum_{j=1}^n \langle \nabla f(\xi_j), x_j -x_{j-1} \rangle \le \mbox{ Schwarz} $$
+$$ \le \sum_{j=1}^n \Vert \nabla f(\xi_j) \Vert \Vert x_j - x_{j-1} \Vert \le C \sum_{j=1}^n \Vert x_j - x_{j-1} \Vert = C \cdot L(\gamma) $$
+per definizione di $L(\gamma)$, usando la limitatezza del differenziale.
+
+\ex{9.12} Per ogni $ x \in \Omega$, esiste $r>0$ tale che $B(x,r) \subseteq \Omega$. Le palle com'è noto son convesse, e per l'osservazione al 9.10 a proposito del 9.9, si ha la Lipschitzianità in $B(x,r)$ di costante $C$ (che a casa mia si chiama locale lipschitzianità). Per la seconda parte, consideriamo $ \varphi_x: U_x = \bar{B}(x, r/2) \rightarrow \mathbb{R}$ che manda $y \mapsto \Vert df_y \Vert_2 $: visto che la palla chiusa è compatta e che $df$ è continuo per ipotesi, l'immagine è compatta, e in particolare esiste $C_x > 0$ tale che $\forall \ y \in U_x $
+$$ \Vert df_y \Vert_2 = \Vert \varphi_x(y) \Vert  \le C_x $$
+Ma allora sempre per il solito lemma $f|_{U_x}$ è Lipschitz di costante $C_x$, ossia $f$ è localmente Lipschitz.
+
+\ex{9.13} Preliminarmente notiamo che per AM-QM vale 
+$$ \sum_{j=1} \vert x_j - y_j \vert \le \sqrt{n} \sqrt { \sum_{j=1}^n (x_j - y_j)^2  } = \sqrt{n} \Vert x-y \Vert $$
+dove le $x_j, y_j$ sono le componenti di $x,y \in \Omega$. Sia $x \in \Omega$, e $U_x$ palletta tale che $x \in U_x \subseteq \Omega$. Fissato $y \in U_x$, per $j=0, \ldots, n-1$ definiamo $z_j = ( y_1, \ldots, y_j, x_{j+1}, \ldots, x_n ) \in \Omega $ e $f_j : [x_j, y_j] \rightarrow \mathbb{R}^m$ tale che $f_j(t) = f(y_1, \ldots, y_{j-1}, t, x_{j+1}, \ldots x_n ) $. Per il valor medio su $f_j$ del problema $9.5$, per opportuni $\xi_j \in [x_j, y_j] $ varrà:
+$$ \Vert f(x) - f(y) \Vert \le \sum_{j=1} ^n \Vert f(z_j) - f(z_{j-1}) \Vert = \sum_{j=1}^n \Vert f_j(y_j) - f_j(x_j) \Vert \le \mbox{ valor medio } $$
+$$ \le \sum_{j=1}^n \Vert f_j'(\xi_j) \Vert \vert y_j - x_j \vert = \sum_{j=1}^n \sqrt{ \sum_{i=1}^m \frac{ \partial f_j}{\partial x_i} (\xi_j) ^2 } \vert  y_j - x_j \vert \le \mbox{ \\ use } \partial f_j / \partial x_i \le C $$
+$$ \le \sqrt{m} C \sum_{j=1}^n \vert y_j - x_j \vert \le \sqrt{mn} C \Vert y-x \Vert $$
+ossia $f$ è localmente lipschitz di costante $\sqrt{mn} C$.
+
+\ex{9.14} Per il 9.13, $f$ è localmente costante. Questo implica anche la continuità, perchè l'oscillazione attorno a un punto è 0. Sia $x_0 \in \Omega $ e $y_0 = f(x_0)$. Sia
+$$ S = \{x \in \Omega: f(x) = y_0 \} = f^{-1}(y_0) $$
+la controimmagine (non vuota) di $y_0$. \newline
+Visto che $f$ è localmente costante, $S$ è aperto. Per continuità di $f$, $S$ è chiuso perchè controimmagine di un singoletto (chiuso). Ma allora per connessione di $\Omega$ si ha $S= \Omega$. 
+
+\ex{9.15} (Non è una dimostrazione! Mancano i dettagli). L'idea è di prendere come dominio $\Omega \subseteq \mathbb{R}^2 $ una spirale che abbia un passo che va come $1/n$, e una funzione qui definita tale che $\partial f / \partial \rho \equiv 0 $, $\partial f / \partial \vartheta = C$, dove $(\rho, \vartheta)$ è il sistema di coordinate polari. Sia $x_n$ un punto d'intersezione tra la retta $y=0$ e l'$n$-esimo ramo della spirale. Allora
+\begin{enumerate}
+\item $\Vert \nabla f \Vert = C$ in tutto $\Omega$;
+\item $\Vert x_{n+1} - x_n \Vert $ va come $1/n - 1/(n+1) \sim 1/n^2$ (perchè l'ho chiesto io);
+\item $\Vert f(x_{n+1} ) - f(x_n) \Vert$ va come $C$ per un giro di circonferenza di raggio $x_n$, che sarebbe circa $2 \pi C / n$
+\item $\Vert f(x_{n+1} ) - f(x_n) \Vert / \Vert x_{n+1} - x_n \Vert $ va come $2 \pi C n$, contro la Lipschitzianità di qualsiasi costante.
+\end{enumerate}
+
+\ex{9.16} No. Si prendano
+$$ U = \{ (x,y) \in \mathbb{R}^2 : (x-1)^2 + y^2 < 1\},\ \ V = \{ (x,y) \in \mathbb{R}^2: (x+1)^2 + y^2 < 1 \} $$
+e $f: U \cup V \to \mathbb{R}$ tale che $f|U = 0$, $f|V = 1$. Allora $\Vert \nabla f(x) \Vert = 0$ per ogni $x$ nel dominio, ma
+$$ \frac{ |f(1/n,0) - f(-1/n,0) | }{ 2/n } = n/2 $$
+contro la Lipschitz di qualsiasi costante. 
+
+\ex{9.17} Per il 9.11, data una qualsiasi curva $\gamma$ affine a tratti che congiunge $x,y \in \Omega$, si ottiene la stima uniforme in $x,y$ rispetto a $\gamma$ 
+$$ \vert f(x) - f(y) \vert \le C \cdot L(\gamma) $$
+Prendendo l'inf al variare di $\gamma$, si ha
+$$ \vert f(x) - f(y) \vert \le C \cdot \delta_{\Omega}(x,y) \le CD \Vert x-y \Vert $$
+dimostrando la Lipschitz di costante $CD$.  
+
+\ex{9.18} E' identico a Rolle. Per Weierstrass esistono $x, x'$ in cui $f$ assume massimo e minimo. Se $x,x' \in \partial \Omega$, allora la funzione è costantemente 0 e siamo tutti contenti; altrimenti senza perdita di generalità $x$ è in $\Omega$ (ricordiamo $\bar{\Omega} = \Omega \cup \partial \Omega $ ), ed è facile dimostrare che qui il differenziale si annulla. Infatti lungo le sezioni in $e_1, \ldots, e_n$, si ha che $f | x+\mathrm {Span} (e_i) $ assume massimo in $x$, e perciò $\partial f / \partial e_i (x) = 0$. Ma allora $\Vert \nabla f(x) \Vert^2 =  \sum_{j=1}^n (\partial f / \partial e_j ) ^2 (x)  = 0$, ossia $\nabla f(x) = 0$. 
+
+\ex{9.23} Mostriamo che la mappa $\varphi: D \rightarrow \mathbb{R}$ che manda $v$ in $\partial_v f(x)$ è Lipschitz, e in particolare uniformemente continua. Infatti, per ogni $v,w \in D$ si ha, per $C$-Lipschitzianità di $f$:
+$$  \left \vert \frac{ f(x+hv) - f(x) }{h} - \frac{ f(x+hw) - f(x) }{h} \right  \vert = \left \vert \frac{ f(x+hv) - f(x+hw)}{h} \right \vert \le C \Vert v-w \Vert $$ 
+Passando al limite in $h \to 0 $ si ottiene proprio $\vert \varphi(v) - \varphi(w) \vert \le C \Vert v-w \Vert$. Perciò $\varphi$ manda successioni di cauchy in successioni di cauchy (uni $C^0$ ). \newline
+Consideriamo ora $(v_n)_{n \in \mathbb{N} } \subseteq D$ convergente a $v \in \mathbb{R}^n$. Vogliamo dimostrare che $\partial_v f (x)$ esiste ed è uguale al limite di $\partial_{v_n} f (x) $ (che implica $v \in D$). Anzitutto il limite di $\partial_{v_n} f(x) = \varphi(v_n) $ esiste perchè $v_n$ è di cauchy e $\varphi$ manda s.c in s.c. Dunque vale $\forall n \in \mathbb{N}$, con lo stesso conto di prima:
+$$ \frac{f(x+hv) - f(x) }{h}    \le \frac{ f(x+hv_n) - f(x) }{h} + \Vert v-v_n \Vert $$
+$$ \frac{f(x+hv) - f(x)}{h} \ge \frac{ f(x+hv_n) - f(x) }{h} - \Vert v-v_n \Vert $$
+Passando al limsup nella prima e al liminf nella seconda per $h \to 0$, si ottiene
+$$\limsup_{h \to 0} \frac{f(x+hv) - f(x)}{h} \le \varphi(v_n) + \Vert v- v_n \Vert $$
+$$ \liminf_{h \to 0} \frac{f(x+hv) - f(x)}{h} \ge \varphi(v_n) - \Vert v-v_n \Vert $$
+Passando al limite in $n \to \infty$ si ha
+$$ \limsup_{h \to 0} \frac{f(x+hv) - f(x)}{h} \le \lim_{n \to \infty} \varphi(v_n) \le \liminf_{h \to 0} \frac{f(x+hv) - f(x)}{h} $$
+che dimostra l'asserto. 
+
+ 
