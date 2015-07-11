@@ -2,13 +2,14 @@
 \ex{10.5} {\it Unicità.} Immediata.\\
 {\it Esistenza.} Considero la funzione $h$ da $K$ a $\RR$ definita da $h(x)=d(x,f(x))$; è facile vedere che $h$ è continua (usando la continuità di $f$) su $K$ e dunque ammetterà minimo $m=h(z)$ per un certo $z\in K$. Se $m=0$ avremmo finito per nondegenericità della distanza, supponiamo dunque $m>0$. Si ha subito un assurdo:
 $$
-m=h(z)=d(z,f(z))>d(f(z),f^2(z))=h(f(z))\quad \Rightarrow\quad\mbox{assurdo perchè $z$ era un minimo per $h$} 
+m=h(z)=d(z,f(z))>d(f(z),f^2(z))=h(f(z))
 $$ 
+Che è assurdo perchè $z$ era un minimo per $h$.\\
 Mostriamo ora che tale $z$ è il limite delle ricorrenze del tipo $x_{n+1}=f(x_n)$ indipendentemente da $x_0$. Si vede subito che la successione $\left (d(z,x_n) \right )_{n\in\NN}$ è strettamente decrescente e non negativa, ammette dunque un limite $\rho\geq 0$. Per compattezza estraiamo una sottosuccessione $(x_{n(k)})_{k\in\NN}$ covergente ad un certo $\overline{x}$; per continuità è chiaro che $d(z,\overline{x})=\rho$. Si vede anche che la successione $(x_{n(k)+1})_{k\in\NN}$ converge a $f(\overline{x})$ e sempre per continuità $d(z,f(\overline{x}))=\rho$, ma se $z\neq\overline{x}$ potrei applicare l' ipotesi ed ottenere:
 $$
-\rho=d(z,\overline{x})<d(f(z),f(\overline{x}))=d(z,f(\overline{x}))=\rho\quad \Rightarrow \quad \mbox{assurdo}
+\rho=d(z,\overline{x})<d(f(z),f(\overline{x}))=d(z,f(\overline{x}))=\rho
 $$
-e dunque la tesi: $z=\overline{x}$. Inoltre non abbiamo usato mai il valore di $x_0$, da cui questa dimostrazione non dipende.
+che è assurdo e dunque la tesi: $z=\overline{x}$. Inoltre non abbiamo usato mai il valore di $x_0$, da cui questa dimostrazione non dipende.
 \ex{10.10} Per il problema $10.1$ esiste $a$ in $[0,1]$ punto fisso per $f$. Considero la successione $(a_n)_{n\in\NN}$ definita per ricorrenza da:
 $$
 a_0=a;\qquad a_{n+1}=g(a_n)
@@ -22,3 +23,21 @@ $$
 a_k=f(a_k)>g(a_k)=a_{k+1}\geq 0
 $$
 da cui esiste $\overline{a}$ limite della successione $(a_n)_{n\in\NN}$. Per continuità di $f$ anche $\overline{a}$ è punto fisso per $f$, mentre per continuità di $g$ si ha che $\overline{a}$ è punto fisso anche per $g$, come si vede passando al limite la ricorrenza; ma allora $f(\overline{a})=g(\overline{a})$, assurdo perchè $f>g$.
+\ex{10.16} Mostriamo solo la formula di addizione. Sia $A: \RR^2\rightarrow \RR$ definita da:
+$$
+A(s,x)=u(x)\dot{u}(s-x)+\dot{u}(x)u(s-x)
+$$
+Osserviamo che $A$ è $C^{\infty}$ (usando che $u\in C^{\infty}$) e che in realtà è funzione solo della prima variabile, infatti:
+$$
+{\partial_2 A}(s,x)=\dot{u}(x)\dot{u}(s-x)-u(x)\ddot{u}(s-x)+\ddot{u}(x)u(s-x)-\dot{u}(x)\dot{u}(s-x)=
+$$
+$$
+=\dot{u}(x)\dot{u}(s-x)+u(x){u}(s-x)-{u}(x)u(s-x)-\dot{u}(x)\dot{u}(s-x)=0
+$$
+e dunque $A(s,x)=a(s)$. Ma è un semplice conto far vedere che $a(0)=0$, ed $\dot{a}(0)=1$ ed inoltre che $\ddot{a}+a=0$, da cui $a(s)=u(s)$ e cioè la tesi. facciamo il conto per scrupolo:
+$$
+\dot{a}(s)=u(x)\ddot{u}(s-x)+\dot{u}(x)\dot{u}(s-x)=-u(x){u}(s-x)+\dot{u}(x)\dot{u}(s-x)
+$$
+$$
+\ddot{a}(s)=-u(x)\dot{u}(s-x)-\dot{u}(x){u}(s-x)=-a(s)
+$$

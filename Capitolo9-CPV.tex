@@ -86,5 +86,18 @@ $$ \liminf_{h \to 0} \frac{f(x+hv) - f(x)}{h} \ge \varphi(v_n) - \Vert v-v_n \Ve
 Passando al limite in $n \to \infty$ si ha
 $$ \limsup_{h \to 0} \frac{f(x+hv) - f(x)}{h} \le \lim_{n \to \infty} \varphi(v_n) \le \liminf_{h \to 0} \frac{f(x+hv) - f(x)}{h} $$
 che dimostra l'asserto. 
-
- 
+\ex{9.60} Restringiamoci ad un compatto $K\subset \RR^2$. Per un generico $x\in Z_K$ sono soddisfatte le ipotesi del teorema del Dini e dunque:
+$$
+\mbox{esistono } U_x,V_x\mbox{ intervalli aperti tali che } Z_K\cap (U_x \cart V_x) \mbox{ sia il grafico di una funzione $\varphi_x \in C^1$}
+$$
+dato che i $U_x \cart V_x$ formano, al variare di $x\in K$, un ricoprimento aperto di $K$ ne estraggo un sottoricomprimento finito. Scegliendo dei compatti $K_n$ che esauriscano $\RR^2$ riesco a produrre una quantità numerabile di rettangoli $r_i:=U_i \cart V_i$ che ricoprono tutto il piano (per mantenere la coerenza nella costruzione basta togliere al compatto successivo l' unione dei rettangoli prodotti ai passi precedenti). E' evidente che dentro un certo $U_i \cart V_i$ so parametrizzare il mio grafico con una curva $C^1$ del tipo (supponendo di aver esplicitato la $y$):
+$$
+\gamma_i:U_i \rightarrow U_i \cart V_i \qquad \gamma: t\mapsto (t,\varphi_i(t))
+$$
+e che tali parametrizzazioni possono essere unite in maniera coerente poichè nell' interzioni dei due rettangoli aperti i grafici delle due funzioni (che coincidono con gli zer idi $f$) sono uguali.\\
+Costruiamo ora le nostre curve algoritmicamente. Scegliamo un rettangolo $R_0$; parametrizziamo il grafico della funzione $\varphi_0$ che questo contiene; aggiungendo tempi nel futuro spostiamoci nel rettangolo "successivo" ed estendiamo la parametrizzazione; aggiungendo tempi nel passato estendiamo la parametrizzazione all' indietro. Se con questa procedura non si passa mai per un punto già visitato abbiamo prodotto una curva definita per tempi che stanno in un intervallo aperto non limitato, diffeomorfo quindi a $(0,1)$, a patto di riparametrizzazioni ho ottenuto una $\gamma$ del primo tipo. Supponiamo invece di passare per un punto $x_0$ già visto. Chiamiamo $t_0< t_1$ i tempi in cui ci passiamo. Sosteniamo che $\dot{\gamma}(t_0)\parallel \dot{\gamma}(t_1)$; se così non fosse avrei derivando e valutando in $t_0$ e in $t_1$ la funzione costantemente nulla $f\circ\gamma$:
+$$
+0\equiv(f\circ\gamma)'=\nabla f(x_0). \dot{\gamma}(t_0)=\nabla f (x_0) . \dot{\gamma}(t_1)\ \Rightarrow \ \nabla f (x_0)=0
+$$ 
+che è assurdo. Dunque possiamo raccordare la $\gamma$ con se stessa in modo $C^1$ ed otteniamo (per buona definizione delle $\varphi$) che il prolungamento da qui in poi della $\gamma$ sarà identico a quello già fatto; in altre parole: il dominio dei tempi per questa curva è $\mathbb{S}^1$. \\
+E' chiaro che con questa costruzione produrremo un numero di curve al più grande come quello dei rettangoli cioè numerabile, osserviamo inoltre che se invece che $\RR^2$ avessimo considerato un suo compatto, avremmo potuto produrre un numero {\it finito} di curve.  
