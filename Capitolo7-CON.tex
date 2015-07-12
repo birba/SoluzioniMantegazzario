@@ -1,7 +1,7 @@
 \section{Continuità}
 
 \ex{7.6} Osserviamo che una formulazione equivalente è:
-$$ f\mbox{ surgettiva} \wedge \left( f(x_n)\mbox{ converge} \Rightarrow (x_n) \mbox{ converge} \right) \Rightarrow f \mbox{ continua} $$
+$$ f\mbox{ surgettiva} \wedge \left[ f(x_n)\mbox{ converge} \Rightarrow (x_n) \mbox{ converge} \right] \Rightarrow f \mbox{ continua} $$
 Intanto mostriamo che $f$ è iniettiva. Se non lo fosse avrei $f(x)=f(x'):=f$ con $x\neq x'$, prendo la successione:
 $$ x_{2n}=x\ \mbox{ e }\ x_{2n+1}=x'\ \ \Rightarrow\ f(x_n)\rightarrow f\ \  \wedge\ \ (x_n) \mbox{ non converge} $$
 Assurdo, dunque $f$ è bigettiva, considero ora la sua inversa $g$ e riscrivo il problema come:
@@ -9,7 +9,24 @@ $$ g\mbox{ bigettiva} \wedge \left( (y_n)\mbox{ converge} \Rightarrow g(y_n) \mb
 Posto ora che $y_n\rightarrow y_{\infty}$ e che $g(y_n)\rightarrow g_{\infty}$ considero la successione:
 $$ z_{2n}=y_{\infty}\  \mbox{ e}\  z_{2n+1}=y_n\ \Rightarrow\  g(z_{2n+1})\rightarrow g_{\infty}\\ \mbox{ e}\  g(z_{2n})=g(y_{\infty}) $$
 Per ipotesi di convergenza e per unicità del limite ho: $ g_{\infty}=g(y_{\infty})$. Ma questa è la continuità di $g$. Essendo $g$ continua e bigettiva è monotòna e dunque la sua inversa, cioè $f$, è continua.
-
+\ex{7.15} Intanto posto $X=\{x\in \RR : x>0\}$ si ha che $f: x\mapsto x+1$ è una isometria iniettiva ma non surgettiva.\\
+Supponiamo ora $X$ compatto e che, per assurdo, esista $\overline{x}\in X\setminus f(X)$. Osserviamo che:
+$$
+\inf_{y\in X}\{d(\overline{x},f(y))\}:=\delta>0
+$$
+per compattezza di $f(X)$ (le isometrie sono continue). Per ragionamenti insiemistici si ha che:
+$$
+f^k(\overline{x}) \in f^k(X)\setminus f^{k+1}(\overline{x})\ \ \Rightarrow \ \ f^{k+1}(\overline{x}) \in f^{k+1}(X)\setminus f^{k+2}(\overline{x})
+$$
+e dunque produciamo una successione ponendo $x_n=f^{n}(\overline{x})$, estraendo una sottosuccesione convergente $x_{n(k)}$ avremo per $k$ sufficientemente grande:
+$$
+d(x_{n(k)},x_{n(k+1)})<\delta /2 \ \Rightarrow \ d(\overline{x}, f^{n(k+1)-n(k)}(\overline{x}))<\delta /2
+$$
+usando l' iniettività di $f$ ed il fatto che è un' isometria. Ma per quanto detto prima abbiamo:
+$$
+\delta < d(\overline{x}, f^{n(k+1)-n(k)}(\overline{x}))<\delta /2
+$$ 
+che è assurdo.
 \ex{7.17}Mostriamo che $f$ manda chiusi in chiusi (dunque $f^{-1}$ controporta chiusi in chiusi dunque è continua). Prendo $C$ chiuso in $X$, per compattezza di $X$ anche $C$ è compatto, dunque la sua immagine tramite $f$ è compatta (Weierstrass), ma, in spazi metrici, ogni compatto è chiuso. 
 
 \ex{7.21} Mostriamo che se $f$ è continua ed ha la proprietà richiesta allora è costante.\\
